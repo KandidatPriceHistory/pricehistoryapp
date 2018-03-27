@@ -4,7 +4,7 @@ export default class AppComponent extends Component {
    render() {
       return (
          <div>
-            Hello World
+            Hello World from Farangis branch
          </div>
       )
    }
