@@ -1,0 +1,32 @@
+@import "../../style/pr-foundation.scss";
+
+$primary-color: red;
+$bg-color: #2d748c;
+$hover-color: #F8AFB5;
+$text-color: #2977bb;
+
+nav{
+  ul{
+    background: $pr-off-black;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li{
+    display: inline-block;
+
+  }
+  a{
+    color: $text-color;
+    display: inline-block;
+    padding: 10px 16px;
+    text-decoration: none;
+  }
+}
+h1{
+  color: $primary-color;
+}
+
+p{
+  color: $primary-color;
+}
