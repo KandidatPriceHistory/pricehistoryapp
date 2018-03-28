@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Title from "./Header/Title"
+import Title from "./Title/Title"
 
 export default class Header extends React.Component {
    render() {
@@ -9,4 +9,3 @@ export default class Header extends React.Component {
       );
    }
 }
-  
