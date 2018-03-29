@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./Header/Header";
+import Graph from "./Graph/Graph"
+import Product from "./Product/Product"
 //import Footer from "./Footer";
 
 export default class AppComponent extends React.Component {
@@ -9,6 +11,8 @@ export default class AppComponent extends React.Component {
       return (
          <div>
           <Header title ={title}/>
+          <Product />
+          <Graph />
          </div>
       );
    }
