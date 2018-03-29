@@ -1,0 +1,88 @@
+// = Color variables
+// -----------------------------
+$pr-white: white;
+$pr-black: #191919;
+$pr-off-black: #343434;
+$pr-off-gray: #bfbfbf;
+$pr-turquoise: #2d748c;
+$pr-white-20: rgba(255, 255, 255, 0.2);
+$pr-white-50: rgba(255, 255, 255, 0.5);
+
+$pr-blue: #1994e0;
+$pr-blue-light-dark: #2977bb;
+$pr-blue-dark: #256cad;
+$pr-crystal-meth-blue: #eff2f3;
+$pr-blue-grey: #A0AFBD;
+
+$pr-orange: #DB9431;
+
+$pr-dusk-darker: #0F4952;
+$pr-dusk-dark: #134c54;
+$pr-dusk: #207A88;
+$pr-dusk-light: #7AAFBA;
+$pr-dusk-lighter: #BCD7DB;
+$pr-dusk-super-light: rgba(32, 121, 136, 0.10);
+
+$pr-pink: #EB5864;
+$pr-pink-dark: #BD1F2C;
+$pr-pink-light: #F8AFB5;
+$pr-pink-lighter: #FBD6D9;
+
+$pr-link: #376480;
+$pr-link-active: #305a74;
+$pr-link-hover: #4d7d9a;
+
+$pr-action: $pr-dusk;
+$pr-action-active: $pr-dusk-light;
+$pr-action-hover: $pr-dusk-light;
+
+$pr-cta: $pr-blue;
+$pr-cta-active: $pr-blue-dark;
+$pr-cta-hover: $pr-blue-dark;
+$pr-cta-disabled: #cecece;
+
+$pr-gray: #fafafa;
+$pr-darkgray: #e1e4e6;
+$pr-low-importance: #adbec8;
+$pr-low-importance-active: #c2d1da;
+
+$main-bg: $pr-white;
+$listing-bg: #F2F2F2;
+$sec-listing-bg: #F7F7F7;
+$dark-grey: #777777;
+
+$tert-bg: #EFEFEF;
+$quart-bg: #E9EBED;
+
+$prim-text: rgba(0, 0, 0, 0.91);
+$sec-text: rgba(0, 0, 0, 0.57);
+$prim-text-white: white;
+$sec-text-white: rgba(255, 255, 255, .75);
+$ter-text: rgba(0, 0, 0, 0.31);
+$disabled-text: #bebebe;
+
+$sig-positive-label: #389245;
+$sig-positive: #A6CC5B;
+$sig-negative: #E56357;
+$sig-neutral: #FCDF6C;
+
+$star-filled: $pr-orange;
+
+$pr-border-color: #c8d0d8;
+$separator-color: #E1E4E6;
+$table-grey: #FBFBFB;
+$pr-green: #26774b;
+$pr-opacity-green: rgba(38, 119, 75, 0.6);
+$pr-light-green: #f3f7f8;
+
+$pr-cyber-monday: #8ab2ba;
+
+$overlay-transparency: rgba(0, 0, 0, 0.5);
+$shadow-transparency: rgba(0, 0, 0, 0.15);
+
+// = Component colors
+// -----------------------------
+
+$modal-action-color: $pr-action;
+$modal-action-color-hover: $pr-action-hover;
+$modal-action-color-active: $pr-action-active;
