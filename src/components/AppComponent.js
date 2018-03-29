@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from "./Header/Header";
 import Graph from "./Graph/Graph"
 import Product from "./Product/Product"
-//import Footer from "./Footer";
 
 export default class AppComponent extends React.Component {
 
