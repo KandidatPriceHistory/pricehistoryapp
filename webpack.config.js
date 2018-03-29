@@ -17,12 +17,15 @@ module.exports = {
                         loader: "sass-loader" // compiles Sass to CSS
             }
             ]
-        }
+          }, {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader'
+}
     ]
     },
     resolve: {
         extensions: [
                     ".js", ".jsx", ".scss"
-        ]   
+        ]
     }
-}; 
+};
