@@ -1,18 +1,28 @@
 @import "../../style/pr-foundation";
 
-
-h1{
-  color: $pr-pink-dark;
+//temporary
+h4{
   text-align: center;
-  font: $fallback-font;
+}
+//-----------Header:-------------
+.headerDiv{
+  width: 100;
+  height: 100;
+  background-color: $pr-orange;
+  #temporaryHeaderComponent {
+    text-align: center;
+  }
+  //background-image: url('https://sherwin.scene7.com/is/image/sw/color-swatch?_tparam_size=250,250&layer=comp&_tparam_color=019187');
+
 }
 
-h2{
-  color: $pr-orange;
-}
+//-----------Header title:-------------
 
 .headerDiv{
-  margin: 0;
-  padding: 0;
-  background-image: url('https://sherwin.scene7.com/is/image/sw/color-swatch?_tparam_size=250,250&layer=comp&_tparam_color=019187');
+  #title {
+    text-align: center;
+    color: $pr-pink-dark;
+    background-color: $pr-orange;
+
+  }
 }

@@ -5,3 +5,4 @@ import AppComponent from './components/AppComponent';
 
 
 render(<AppComponent />, document.getElementById('app'));
+//translate: renderar AppComponent i html koden med id "app" 

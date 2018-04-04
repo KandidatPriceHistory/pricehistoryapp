@@ -4,8 +4,9 @@ export default class Title extends React.Component {
 
    render() {
      return (
-       <h1 className = "titleText"> {this.props.title}</h1>
+       <div>
+          <h1 className = "titleText"> PriceHistory </h1>
+        </div>
       );
    }
 }
-
