@@ -6,7 +6,7 @@ export default class Graph extends React.Component {
    render() {
       return (
         <div className = "graphDiv">
-        <h4> This is the Graph component! </h4>
+        <h4 id= "temporaryGraphTitle "> This is the Graph component! </h4>
         </div>
       );
    }
