@@ -1,1 +1,12 @@
-@import pr-foundation.scss 
+@import "../../../style/pr-foundation";
+
+//-----------Header title:-------------
+
+.headerDiv{
+  #titleText {
+    text-align: center;
+    color: $pr-pink;
+    background-color: $quart-bg;
+
+  }
+}
