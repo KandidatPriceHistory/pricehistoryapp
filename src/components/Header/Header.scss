@@ -8,7 +8,7 @@ h4{
 .headerDiv{
   width: 100;
   height: 100;
-  background-color: $pr-orange;
+  background-color: $pr-gray;
   #temporaryHeaderComponent {
     text-align: center;
   }
@@ -21,8 +21,8 @@ h4{
 .headerDiv{
   #title {
     text-align: center;
-    color: $pr-pink-dark;
-    background-color: $pr-orange;
+    color: $pr-pink;
+    background-color: $quart-bg;
 
   }
 }
