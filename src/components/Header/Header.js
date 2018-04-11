@@ -6,7 +6,7 @@ export default class Header extends React.Component {
    render() {
       return (
         <div className = "headerDiv">
-          <div id= "title">
+          <div id= "titleText">
             <Title />
           </div>
           <h4 id="temporaryHeaderComponent"> This is the header component!</h4>
