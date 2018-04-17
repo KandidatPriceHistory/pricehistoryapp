@@ -4,7 +4,8 @@ node_js:
 cache:
   directories:
   - node_modules
-before_deploy: "-npm run prod"
+before_deploy:
+- npm run prod
 deploy:
   provider: heroku
   api_key:
