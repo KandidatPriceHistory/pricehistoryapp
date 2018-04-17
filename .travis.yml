@@ -1,9 +1,11 @@
 language: node_js
 node_js:
   - "9"
-before_install:
-  - "curl -L https://raw.githubusercontent.com/arunoda/travis-ci-laika/6a3a7afc21be99f1afedbd2856d060a02755de6d/configure.sh | /bin/sh"
-services:
-  - mongodb
-env:
-  - LAIKA_OPTIONS="-t 5000"
+cache: #savea node modules så man slipper installera varje gång
+  directories:
+  - "node_modules"
+before_deploy:
+  -npm run prod
+deploy:
+  provider: heroku
+  api_key: 
