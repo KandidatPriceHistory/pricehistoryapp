@@ -9,7 +9,6 @@ const webpackHotServerMiddleware = require('webpack-hot-server-middleware');
 
 const clientConfig = require('../../webpack/client.dev');
 const serverConfig = require('../../webpack/server.dev');
-const environment = require('./environment');
 
 
 const publicPath = clientConfig.output.publicPath;
