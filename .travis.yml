@@ -1,13 +1,18 @@
 language: node_js
 node_js:
 - '9'
-before_install:
-- curl -L https://raw.githubusercontent.com/arunoda/travis-ci-laika/6a3a7afc21be99f1afedbd2856d060a02755de6d/configure.sh
-  | /bin/sh
-services:
-- mongodb
-env:
-- LAIKA_OPTIONS="-t 5000"
+cache:
+  directories:
+  - node_modules
+before_deploy:
+- npm run prod
 deploy:
+  provider: heroku
   api_key:
-    secure: GJLMx18HpbQPJTLXDetGNMiy2FHGTfwfA8+AbURyx0cmKvRxVycOMo3PXn/vljK93+rYWDbw3kj6tCTgmfig16RUxR7rNPV3t15siPizo6aw051Zgi5K6io6e4xjRg4vsidtEfDM52T7kPmNjt4j7nyNRSC1rCtk+OYUjOONTG5/9rkwFuXyvxmIBBTVcTgqXeLwuS405yghok8KnHCyTFqlWAZn6Ffx52xtEELI4TKv98qSJM2C9X1ZSt9H7Z889vMnrf5xkLwBbF7ngsGzu+UzjLnRAnZ0U+HbJ8mVVu7vw9dXxKATn7pAGW0DmdAEDcNxJUX5XrMiWC6vPjH1d+Td32sbpFMNH+nJN9Jd3I1uXVU6yKcO7PW8baozNRbPfqQQ4mpgis6Tfj5Lkur0rnqD6qsSAt64X4cAxRayimGzYTrTCmbeAhcgsW1tJQRi2cX1L2E0bogFDJE7yiRbUeaw9myegO9SCAbdfBT7Z+JjzTmmFAoD3QLS2q0KrqyGph/LGeFJzjpzUJqeh9qLRnFlWTUTWHfZ5tG+Q/7Ii0+I0a4RsdkNJ7mDIbwsBlmhJ1KTmxe33DX5DvmI2xPZplwBxt/hrrwixbJI+PRLvCpDOvUbMfahxXpmldz9f/C+L0P1wpKJxlOTm7mz6VyBPJJKxIUAPpmS1gyr1OjNBvo=
+    secure: KkRTttXTb/1Jo0NoCTA0+8HJ1HCJn2I8DcKgM0JiDYoz1d5izWpp83b2/8cQs4ePIpJ9gYuNrfBAtFP/YHF9LVB18OVJcaD3Yi736SXdYwEB/OVUPrud8sKc2rO8BFkVVKNlD7TAuYr5e5p6zeZJDdph+G1B53XdSqbzDvzqzZ5gdNApTeSXzxRQ9l2+e7FqvJoEFY48ZVWFiBmw3yYcSWh3Z2A6Mk7Clbo8O5G0Cf7g17XZLyhCdFcxIJ5x+8wm+i49Nnia8VtR0Yl2q9oMcBL93huCGtNp7nI5xVbr9Rqh3zVijTaH72HM9J1H+7KlQbmEjTsZYHESCANE+FPxmnxpasce9DYE7QUpBlswNFRawL5TYyAunZfh4JZbJ0f3ialcxk3l6lvgnIqnnta9mhnFcS3oQO5fCkm6SRE07LvHbnpSf3Yj4pC/krq1cE23PsYidLUJRSqtNu6qzhG2xrX3n6Bx8PhKDi43zgQNg3HWOd9BQICDHIesn44CNiGmt1XalK2wreoyGptayi7IR05mq7BTBu+BQ3OTK6htMSXtCpD7QB8jZqm15c36OCk7GzWPsvrZ2M3e6P740/hZaj/HdUbCOUeAmDn3+h2xQOFsvcx668CLCewI7qWHOjrlFz7htxwldDb96+4SW5eFwX659w8MHI8id2SzIZ3ACjk=
+  app: kandidatpricehistory
+  skip_cleanup: true
+  on:
+    branch: master
+notifications:
+  email: false
