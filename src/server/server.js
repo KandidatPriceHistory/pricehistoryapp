@@ -17,6 +17,7 @@ const clientOutputPath = clientConfig.output.path;
 const serverOutputhPath = serverConfig.output.path;
 
 const DEV = process.env.NODE_ENV === 'development';
+const port = process.env.PORT || 8080;
 
 const app = new Express();
 
@@ -24,9 +25,9 @@ let isBuilt = false;
 
 function done() {
     if (!isBuilt) {
-        app.listen(environment.NODE_PORT, () => {
+        app.listen(port, () => {
             isBuilt = true;
-            console.log(`${new Date().toUTCString()} Node server is listening to port: ${environment.NODE_PORT}`);
+            console.log(`${new Date().toUTCString()} Node server is listening to port: ${port}`);
         });
     }
 }
