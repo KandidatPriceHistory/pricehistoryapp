@@ -10,7 +10,7 @@ deploy:
   provider: heroku
   api_key:
     secure: 7utTHi2M4KTIYEIjrc2N7bPRvtK/LUH532hhWyGASgLVQczL1g1Z3g8U5k8Ama6Rgoy+1dOLf/biKlQoezmGkPF4p/afulfd02HcJpftFCQ/jq7LvSMuPiCUeI0pLnG4rh252+iZDOT5Y/qxov3rnSzd0E77UY+vKT9iUcZ21Z42Rx7BHAX6BCT2UEFvtCZV1E6gDbcLcV5Bxnuz9ocSHJgzANAU90TzkTNHDSnVmcPRCQf4oeN0rgwV9BqsNP87X3Pq+B+r7HaBKAQoOsXoHffbGEsgfI+56rMsaGnxo33boyHgCYAve/Gk1Hmg2YphuZgbr6I+YdiVuKkR6xnokzl2vjL+3Lm29yCZ3VCbCTKsdDDu4qlWZ9U7qBPaO5mTfQuVCdMfk6rM9MdhWtcBEYze2TwSKwKy1hoNMf13ZFOo3IzknqapFDoHCNK8fgkqzwHalU7+KvDuIxy+zpcg6eCR3oORA7A0iQ8ihNNdOTq8guw+gTKDuUQxkLUQKEcOhpFMsnN9CZPAAx60w1ogxJZkqvgnHaI0oSHxU+pKsKy8rOWzSwegfj5QcwyKKHPyixk4qs9OAJeIO2TZTv6Q8oCf6pIhKfRoxkF9ORYmN68TbR7FVWxi1QtpaJo/dl8slO0aCRhrkhXK4n+wPBpYONPD3qAs+8ez+mllAD94BDM=
-  app: pricerunnerapp
+  app: pricehistoryapp
   skip_cleanup: true
   on:
     branch: master
