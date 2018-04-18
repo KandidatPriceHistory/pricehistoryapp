@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-  - "9"
+- '9'
 before_install:
-  - "curl -L https://raw.githubusercontent.com/arunoda/travis-ci-laika/6a3a7afc21be99f1afedbd2856d060a02755de6d/configure.sh | /bin/sh"
+- curl -L https://raw.githubusercontent.com/arunoda/travis-ci-laika/6a3a7afc21be99f1afedbd2856d060a02755de6d/configure.sh
+  | /bin/sh
 services:
-  - mongodb
+- mongodb
 env:
-  - LAIKA_OPTIONS="-t 5000"
+- LAIKA_OPTIONS="-t 5000"
+deploy:
+  api_key:
+    secure: GJLMx18HpbQPJTLXDetGNMiy2FHGTfwfA8+AbURyx0cmKvRxVycOMo3PXn/vljK93+rYWDbw3kj6tCTgmfig16RUxR7rNPV3t15siPizo6aw051Zgi5K6io6e4xjRg4vsidtEfDM52T7kPmNjt4j7nyNRSC1rCtk+OYUjOONTG5/9rkwFuXyvxmIBBTVcTgqXeLwuS405yghok8KnHCyTFqlWAZn6Ffx52xtEELI4TKv98qSJM2C9X1ZSt9H7Z889vMnrf5xkLwBbF7ngsGzu+UzjLnRAnZ0U+HbJ8mVVu7vw9dXxKATn7pAGW0DmdAEDcNxJUX5XrMiWC6vPjH1d+Td32sbpFMNH+nJN9Jd3I1uXVU6yKcO7PW8baozNRbPfqQQ4mpgis6Tfj5Lkur0rnqD6qsSAt64X4cAxRayimGzYTrTCmbeAhcgsW1tJQRi2cX1L2E0bogFDJE7yiRbUeaw9myegO9SCAbdfBT7Z+JjzTmmFAoD3QLS2q0KrqyGph/LGeFJzjpzUJqeh9qLRnFlWTUTWHfZ5tG+Q/7Ii0+I0a4RsdkNJ7mDIbwsBlmhJ1KTmxe33DX5DvmI2xPZplwBxt/hrrwixbJI+PRLvCpDOvUbMfahxXpmldz9f/C+L0P1wpKJxlOTm7mz6VyBPJJKxIUAPpmS1gyr1OjNBvo=
