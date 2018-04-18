@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "dev": "webpack-dev-server --mode development",
-        "prod": "webpack --mode production"
+        "prod": "webpack --mode production",
+        "test": "jest"
     },
     "keywords": [],
     "author": "",
@@ -16,6 +17,7 @@
         "babel-preset-env": "^1.6.1",
         "babel-preset-react": "^6.24.1",
         "css-loader": "^0.28.11",
+        "enzyme": "^3.3.0",
         "enzyme-adapter-react-16": "^1.1.1",
         "jest": "^22.4.3",
         "node-sass": "^4.8.3",
