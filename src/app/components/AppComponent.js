@@ -9,11 +9,11 @@ export default class AppComponent extends Component {
    render() {
       return (
          <div>
-              <Header />
-              <ProductList />
-              <Graph />
-              <Factbox />
-              // component
+            <Header />
+            <ProductList />
+            <Graph />
+            <Factbox />
+            <Footer />
          </div>
       );
    }
