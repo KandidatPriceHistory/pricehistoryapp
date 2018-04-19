@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> PriceHistory Application </title>
+    <% styleSources.forEach(function(src) { %>
+    <link rel="stylesheet" href="<%= publicPath + src %>" type="text/css" media="screen" charset="utf-8" />
+    <% }) %>
+</head>
+<body>
+<div id="app"></div>
+<% scriptSources.forEach(function(src) { %>
+<script src="<%= publicPath + src %>"></script>
+<% }) %>
+
+</body>
+</html>
