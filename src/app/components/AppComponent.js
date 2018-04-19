@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./Header/Header";
 import Graph from "./Graph/Graph"
-import Product from "./Product/Product"
+import ProductList from "./Product/ProductList"
 import Factbox from "./Factbox/Factbox"
 import Footer from "./Footer/Footer"
 
