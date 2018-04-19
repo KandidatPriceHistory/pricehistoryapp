@@ -7,9 +7,9 @@ import AppComponent from './components/AppComponent';
 import productListApp from './reducers';
 
 // redux router
-import { Router, Route, IndexRoute } from 'react-router';
-import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+// import { Router, Route, IndexRoute } from 'react-router';
+// import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-react-router';
+// import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 // import { Router, Route, IndexRoute } from 'react-router';
 // import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-react-router';
