@@ -10,7 +10,7 @@ export default class AppComponent extends Component {
       return (
          <div>
             <Header />
-            <Product />
+            <ProductList />
             <Graph />
             <Factbox />
             <Footer />
