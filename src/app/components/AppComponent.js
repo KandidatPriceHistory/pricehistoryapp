@@ -3,6 +3,7 @@ import Header from "./Header/Header";
 import Graph from "./Graph/Graph"
 import Product from "./Product/Product"
 import Factbox from "./Factbox/Factbox"
+import Footer from "./Footer/Footer"
 
 export default class AppComponent extends Component {
    render() {
@@ -12,6 +13,7 @@ export default class AppComponent extends Component {
             <Product />
             <Graph />
             <Factbox />
+            <Footer />
          </div>
       );
    }
