@@ -1,20 +1,30 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import AppComponent from './components/AppComponent';
+import productListApp from './reducers';
+// import { Router, Route, IndexRoute } from 'react-router';
+// import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-react-router';
+import { fetchData } from './actions/index'
 
+//initialize store
+const store = createStore(productListApp)
+//console.log(store.getState());
 
-const renderApp = (Component) => {
-    render(
-        <AppContainer>
-            <Component />
-        </AppContainer>,
-        document.getElementById('app')
-    );
-};
+/*function loadData() {
+  store.dispatch(fetchData('https://localhost:8080/reducers/productDBtest'))
+}
+*/
+render(
+  <Provider store = { store } >
+    <AppComponent />
+  </Provider>,
+   document.getElementById('app')
+ );
 //translate: renderar AppComponent i html koden med id "app"
 
-renderApp(AppComponent);
 
 // Hot Module Replacement API
 if (module.hot) {

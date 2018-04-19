@@ -1,9 +1,10 @@
 @import "../../style/pr-foundation";
 
-.productDiv{
-   background-color: $pr-darkgray;
+.productItem{
+   background-color: $pr-blue-light-dark;
    width: 100;
    height: 150px;
+   border: solid 1px black;
    #productInlineLeft{
      display: inline-block;
      background: $pr-pink-lighter;
