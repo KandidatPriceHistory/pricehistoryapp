@@ -12,6 +12,7 @@ export default class AppComponent extends Component {
               <ProductList />
               <Graph />
               <Factbox />
+              // component
          </div>
       );
    }
