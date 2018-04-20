@@ -11,20 +11,10 @@ import createHistory from 'history/createBrowserHistory';
 import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
 
-import { fetchData } from './actions/index'
-
-
-
 const history = createHistory();
+
 //initialize store
 const store = createStore(productListApp);
-//console.log(store.getState());
-
-/*function loadData() {
-  store.dispatch(fetchData('https://localhost:8080/reducers/productDBtest'))
-}
-*/
-
 
 render(
   <Provider store = { store } >
