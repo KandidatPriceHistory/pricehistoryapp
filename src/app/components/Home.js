@@ -8,9 +8,7 @@ export default class Home extends Component {
       return (
          <div>
               <Header />
-              // <WelcomeText />
               <ProductList />
-              // <Footer />
          </div>
       );
    }
