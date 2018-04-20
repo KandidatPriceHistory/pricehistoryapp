@@ -1,4 +1,5 @@
 @import "../../style/pr-foundation";
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 
 //temporary
 h4{
@@ -18,9 +19,13 @@ h4{
 
 .headerDiv{
   #titleText {
+    font-family: $body-font;
+    font-weight: bolder;
     text-align: center;
     color: $pr-pink;
     background-color: $quart-bg;
+    font-size: 32px;
+    text-align: left;
 
   }
 }
