@@ -1,11 +1,22 @@
 @import "../../style/pr-foundation";
+@import '../../style/_mixins.scss';
 
 .productInfoBox{
-   height: 50%;
+   height: 200px;
    width: 100%;
-   background-color: $pr-pink-lighter;
+   background-color: $pr-gray;
+   @include breakpoint(xs){
+     background-color: $pr-gray;
+     height: 50%;
+   };
+
    #productPicture{
-     width: 30%;
+     width: 90px;
+     margin-left: 10px;
+     margin-top: 10px;
+     @include breakpoint(xs){
+       width: 15%;
+     };
    }
 }
 
