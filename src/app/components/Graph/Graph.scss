@@ -1,7 +1,13 @@
 @import "../../style/pr-foundation";
+@import "../../style/_mixins.scss";
 
 .graphDiv{
   background-color:$pr-darkgray;
-  width: auto;
-  height: auto;
+  width:100px;
+  height: 100;
+  @include breakpoint(xs){
+    width: 100px;
+    height: auto;
+    background-color: black;
+  }
 }
