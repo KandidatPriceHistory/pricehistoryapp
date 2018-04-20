@@ -32,7 +32,6 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
-    "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "ejs": "^2.5.8",
     "enzyme": "^3.2.0",
@@ -47,6 +46,7 @@
     "history": "^4.7.2",
     "ignore-loader": "^0.1.2",
     "jest": "^22.4.3",
+    "node-run": "^1.0.6",
     "node-sass": "^4.8.3",
     "nodemon": "^1.17.3",
     "npm": "^5.8.0",
@@ -73,5 +73,8 @@
     "webpack-hot-middleware": "^2.21.2",
     "webpack-hot-server-middleware": "^0.5.0",
     "write-file-webpack-plugin": "^4.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.4"
   }
 }
