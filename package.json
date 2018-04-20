@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development concurrently --kill-others \"nodemon src\"",
+    "dev": "cross-env NODE_ENV=development concurrently --kill-others \"nodemon src\"",
     "prod": "cross-env NODE_ENV=production NODE_PATH=./dist/app node --max_old_space_size=900 dist/server/server",
     "build": "cross-env NODE_ENV=production node scripts/build",
     "test": "jest"
