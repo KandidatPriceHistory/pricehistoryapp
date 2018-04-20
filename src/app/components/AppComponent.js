@@ -10,10 +10,9 @@ export default class AppComponent extends Component {
    render() {
       return (
          <div>
-            <Route path="/home" component={Home} />
-            <Route path="/" component={Home} />
-            <Route path="/product" component={Product} />
-            <Route path="/productpricehistory" component={productPriceHistory} />
+            <Route exact path="/product" component={Product} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/productpricehistory" component={productPriceHistory} />
          </div>
       );
    }
