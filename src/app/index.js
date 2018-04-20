@@ -6,26 +6,21 @@ import { Provider } from 'react-redux';
 import AppComponent from './components/AppComponent';
 import productListApp from './reducers';
 
-// redux router
-// import { Router, Route, IndexRoute } from 'react-router';
-// import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-react-router';
-// import createBrowserHistory from 'history/lib/createBrowserHistory';
+// imports for routing
+import createHistory from 'history/createBrowserHistory';
+import { Route } from 'react-router'
+import { ConnectedRouter } from 'react-router-redux'
 
-// import { Router, Route, IndexRoute } from 'react-router';
-// import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-react-router';
-import { fetchData } from './actions/index'
+const history = createHistory();
 
 //initialize store
-const store = createStore(productListApp)
-//console.log(store.getState());
+const store = createStore(productListApp);
 
-/*function loadData() {
-  store.dispatch(fetchData('https://localhost:8080/reducers/productDBtest'))
-}
-*/
 render(
   <Provider store = { store } >
-    <AppComponent />
+    <ConnectedRouter history={history}>
+      <AppComponent />
+    </ConnectedRouter>
   </Provider>,
    document.getElementById('app')
  );
