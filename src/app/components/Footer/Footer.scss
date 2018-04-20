@@ -1,4 +1,5 @@
 @import "../../style/pr-foundation";
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 
 //temporary
 h4{
@@ -9,6 +10,7 @@ h4{
   height: 150;
   background-color: $pr-gray;
   #temporaryFooterComponent {
+    font-family: $body-font; 
     text-align: center;
   }
   //background-image: url('https://sherwin.scene7.com/is/image/sw/color-swatch?_tparam_size=250,250&layer=comp&_tparam_color=019187');
