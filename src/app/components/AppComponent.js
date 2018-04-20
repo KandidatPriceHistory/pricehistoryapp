@@ -6,6 +6,8 @@ import Factbox from "./Factbox/Factbox"
 import Footer from "./Footer/Footer"
 
 export default class AppComponent extends Component {
+
+
    render() {
       return (
          <div>
