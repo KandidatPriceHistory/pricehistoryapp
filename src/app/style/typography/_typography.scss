@@ -1,0 +1,75 @@
+:global {
+    h1, .h1 {
+        @include font-size(22);
+        @include font-weight(semibold);
+        @include line-height(sm);
+
+        @include breakpoint(sm) {
+            @include font-size(26);
+            @include line-height(xl);
+        }
+
+        @include breakpoint(md) {
+            @include font-size(30);
+        }
+    }
+
+    h2, .h2 {
+        @include font-size(16);
+        @include line-height(sm);
+        @include font-weight(normal);
+
+        @include breakpoint(sm) {
+            @include font-size(18);
+        }
+
+        @include breakpoint(md) {
+            @include font-size(20);
+        }
+    }
+
+    h3, .h3 {
+        @include font-weight(normal);
+        @include font-size(13);
+        @include line-height(sm);
+        margin: 0;
+
+        @include breakpoint(sm) {
+            @include font-size(15);
+        }
+
+        @include breakpoint(md) {
+            @include font-size(16);
+        }
+    }
+
+    h4, .h4 {
+        @include font-weight(semibold);
+        @include font-size(13);
+        @include line-height(sm);
+        text-transform: uppercase;
+    }
+
+    h5, .h5 {
+        @include font-weight(semibold);
+        @include font-size(11);
+        @include line-height(sm);
+        text-transform: uppercase;
+    }
+
+    p {
+        @include font-weight(normal);
+        @include font-size(14);
+        @include line-height(sm);
+    }
+
+    small {
+        @include font-weight(normal);
+        @include font-size(12);
+        @include line-height(sm);
+    }
+
+    h1, .h1, h2, .h2, h3, .h3 {
+        margin: 0;
+    }
+}
