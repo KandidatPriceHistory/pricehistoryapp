@@ -4,12 +4,22 @@ import { combineReducers } from 'redux';
 
 
 const initialState = {
-  products: [{ "name": "iPhone", "id": 1 },
+  products: [
+  { "name": "iPhone", "id": 1 },
   { "name": "Macbook", "id": 2 },
   { "name": "Table", "id": 3 },
   { "name": "TV", "id": 4 },
   { "name": "Computer2","id": 5}
-]
+  ],
+  data:[
+  {"month": 'Nov', "price": 4000},
+  {"month": 'Dec', "price": 4000},
+  {"month": 'Jan', "price": 5030},
+  {"month": 'Feb', "price": 2780},
+  {"month": 'Mar', "price": 1890},
+  {"month": 'Apr', "price": 50},
+  {"month": 'Maj', "price": 3490}
+  ],
 };
 
 // TODO: sätta ett action, typ LOAD_PRODUCT när vi laddar sidan,

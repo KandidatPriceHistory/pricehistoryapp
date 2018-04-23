@@ -4,6 +4,7 @@ import Graph from './Graph/Graph.js';
 import ProductItemBox from './Product/ProductInfoBox';
 
 export default class productPriceHistory extends Component {
+
     render() {
         return (
             <div>
@@ -13,4 +14,5 @@ export default class productPriceHistory extends Component {
             </div>
         );
     }
+
 }
