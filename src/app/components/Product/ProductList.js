@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 const connectedList = ({ products }) => (
   <div className = "listProducts" >
     { products.map(el => (
-      <ProductItem name={el.name} id={el.key}/>
+      <ProductItem key={el.key} name={el.name} id={el.key}/>
     ))}
   </div>
 );
