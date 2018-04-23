@@ -1,31 +1,13 @@
 @import "../../style/pr-foundation";
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 
-//temporary
-h4{
-  text-align: center;
-}
-//-----------Header:-------------
+
 .headerDiv{
   width: 100;
-  height: 100;
-  background-color: $pr-gray;
-  #temporaryHeaderComponent {
-    text-align: center;
-  }
-  //background-image: url('https://sherwin.scene7.com/is/image/sw/color-swatch?_tparam_size=250,250&layer=comp&_tparam_color=019187');
-
-}
-
-.headerDiv{
-  #titleText {
-    font-family: $body-font;
-    font-weight: bolder;
-    text-align: center;
-    color: $pr-pink;
-    background-color: $quart-bg;
-    font-size: 32px;
-    text-align: left;
-
-  }
+  height: 50px;
+  background-color: $pr-white;
+  font-family: $body-font;
+  color: $pr-pink;
+  font-size: 22px;
+  text-align: left;
 }
