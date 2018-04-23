@@ -4,6 +4,10 @@
 @import "layout";
 @import "font";
 
-
 /* Mixins */
 @import "mixins";
+
+/* typography settings*/
+@import "typography/font-face";
+@import "typography/icomoon";
+@import "typography/typography";
