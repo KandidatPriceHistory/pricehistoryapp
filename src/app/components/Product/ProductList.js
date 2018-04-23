@@ -12,10 +12,21 @@ const mapStateToProps = state => {
 const connectedList = ({ products }) => (
   <div className = "listProducts" >
     { products.map(el => (
-      <ProductItem name={el.name} id={el.key}/>
+      <ProductItem
+        name={el.name}
+        id={el.key}
+        picSrc={el.picSrc}
+      />
     ))}
   </div>
 );
+/*
+<Product
+  key={product.id}
+  {...product}
+  onClick={() => toggleProduct(product.id)} //(gå in på produkten)
+/>
+
 /*
 const mapDispatchToProps = dispatch => ({
   toggleProduct: id => dispatch(toggleProduct(id))
