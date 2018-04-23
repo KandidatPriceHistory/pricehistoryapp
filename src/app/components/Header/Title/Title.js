@@ -6,7 +6,7 @@ export default class Title extends React.Component {
      return (
        <div>
           <h1 id = "titleText"> PriceHistory </h1>
-          <i class = "icon-pr_logo_name _33wSgpJjLE"> </i>
+          <i className="icon-pr_logo_name _33wSgpJjLE" />
         </div>
       );
    }
