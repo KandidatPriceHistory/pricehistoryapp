@@ -11,7 +11,6 @@ export default class AppComponent extends Component {
    render() {
       return (
          <div>
-         // TODO: lägg in id till product-komponenten här
             <Route exact path="/product/:id" component={Product} />
             <Route exact path="/" component={Home} />
             <Route exact path="/productpricehistory" component={productPriceHistory} />
