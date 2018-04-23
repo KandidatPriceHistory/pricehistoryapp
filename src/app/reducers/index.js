@@ -11,7 +11,7 @@ const initialState = {
   { "name": "TV", "id": 4 },
   { "name": "Computer2","id": 5}
   ],
-  data:[
+  graph:[
   {"month": 'Nov', "price": 4000},
   {"month": 'Dec', "price": 4000},
   {"month": 'Jan', "price": 5030},
@@ -29,6 +29,9 @@ const rootReducer = (state = initialState, action) => {
     case ADD_PRODUCT:
       return {state, products: [...state.products,
         action.payload]
+      };
+      case ADD_GRAPH:
+      return {state, graph: [...state.graph, action.playload]
       };
     default:
       return state;
