@@ -14,18 +14,12 @@ const connectedList = ({ products }) => (
     { products.map(el => (
       <ProductItem
         name={el.name}
-        id={el.key}
+        id={el.id}
         picSrc={el.picSrc}
       />
     ))}
   </div>
 );
-/*
-<Product
-  key={product.id}
-  {...product}
-  onClick={() => toggleProduct(product.id)} //(gå in på produkten)
-/>
 
 /*
 const mapDispatchToProps = dispatch => ({
@@ -36,9 +30,7 @@ const ProductList = connect(mapStateToProps)(connectedList);
 
 export default ProductList;
 
-/*import React, { Component } from 'react';
-import styles from './Product.scss'
-import Product from './ProductItem'
+/*
 
 export default class ProductList extends React.Component {
   render() {

@@ -4,7 +4,7 @@ import styles from "./Product.scss"
 import { Link } from 'react-router-dom';
 
 const Product = ({ name, id, picSrc }) => (
-  <Link to="/product" params={{name, id, picSrc}}>
+  <Link to = {`/product/${id}`} >
     <div className = "productItem" key = {id} >
       <img src={picSrc} className="pictureList" />
       {name}

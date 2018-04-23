@@ -11,11 +11,18 @@
    };
 
    #productPicture{
+     display: inline-block;
      width: 90px;
      margin-left: 10px;
      margin-top: 10px;
      @include breakpoint(xs){
-       width: 15%;
+       display: inline-block;
+       width: 10%;
+     };
+   }
+   #titleInfoBox{
+     @include breakpoint(xs){
+        margin-left: 150px;
      };
    }
 }

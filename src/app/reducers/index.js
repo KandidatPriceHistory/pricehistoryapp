@@ -9,7 +9,7 @@ const initialState = {
   { "name": "Headphones", "id": 3, "picSrc": "https://www.beoplay.com/~/media/relation_spots/products/h4/1000x1000/h4_steelblue_1000x1000.png"},
   { "name": "TV", "id": 4, "picSrc": "http://gif.tv/tv.png" },
   { "name": "PC","id": 5, "picSrc": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05401859.png"}
-]
+], selectedProduct: null
 };
 
 // TODO: sätta ett action, typ LOAD_PRODUCT när vi laddar sidan,
@@ -17,11 +17,12 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_PRODUCT:
-      return state.map(product =>
-        (product.id === action.id)
-          ? { id: product.id, text: product.text, picSrc: product.picSrc}
-          : product
-        )
+      return {
+        products: state.products,
+        selectedProduct: state.products.filter(el =>
+        el.id == action.id
+        //returnerar endast det product-objektet som är samma id som actionet (retunerar en lista)
+      )[0]};
     default:
       return state;
   }

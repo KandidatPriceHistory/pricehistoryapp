@@ -1,12 +1,43 @@
 import React, { Component } from 'react';
 import styles from "./Product.scss"
+import { loadProduct } from '../../actions/index'
 
-export default class ProductItemBox extends React.Component {
+export default class ProductInfoBox extends React.Component {
   render() {
      return (
         <div class = "productInfoBox">
-          <img id ="productPicture" src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&.v=1504378258086" />
+            <h2 id="titleInfoBox">{this.props.product.name}</h2>
+            <img src={this.props.product.picSrc} id="productPicture"/>
         </div>
+          //TODO: get picture and text from Redux
+
      );
   }
 }
+/*
+
+const mapDispatchToProps = dispatch => ({
+  toggleProduct: id => dispatch(toggleProduct(id))
+})
+
+const ProductList = connect(mapStateToProps)(connectedList);
+
+export default class ProductList extends React.Component {
+  render() {
+     return (
+        <div className = "productDiv">
+          const productList = ({ product, toggleProduct }) => (
+            <div>
+            {products.map(product =>
+              <Product
+                key={product.id}
+                {...product}
+                onClick={() => toggleProduct(product.id)} //(gå in på produkten)
+              />
+            )}
+          </div>
+        )
+        </div>
+     );
+  }
+*/
