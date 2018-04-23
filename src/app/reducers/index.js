@@ -30,9 +30,6 @@ const rootReducer = (state = initialState, action) => {
       return {state, products: [...state.products,
         action.payload]
       };
-      case ADD_GRAPH:
-      return {state, graph: [...state.graph, action.playload]
-      };
     default:
       return state;
   }
