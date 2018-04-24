@@ -6,8 +6,13 @@ export default class ProductInfoBox extends React.Component {
   render() {
      return (
         <div class = "productInfoBox">
-            <h2 id="titleInfoBox">{this.props.product.name}</h2>
-            <img src={this.props.product.picSrc} id="productPicture"/>
+            <div id="titleAndInfo">
+              <h1 id="titleInfoBox">{this.props.product.name}</h1>
+              <p id="productInfoText"> {this.props.product.shortDescription} </p>
+            </div>
+            <div id="productPictureDiv">
+              <img src={this.props.product.picSrc} id="productPictureImg"/>
+            </div>
         </div>
 
      );

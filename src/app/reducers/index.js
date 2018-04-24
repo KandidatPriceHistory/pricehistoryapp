@@ -4,11 +4,11 @@ import { combineReducers } from 'redux';
 
 
 const initialState = {
-  products: [{ "name": "iPhone", "id": 1, "picSrc": "https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&.v=1504378258086"},
-  { "name": "Macbook", "id": 2, "picSrc": "https://cdn.shopify.com/s/files/1/0259/1735/products/macbook_air_template_2048x.png?v=1511882855"},
-  { "name": "Headphones", "id": 3, "picSrc": "https://www.beoplay.com/~/media/relation_spots/products/h4/1000x1000/h4_steelblue_1000x1000.png"},
-  { "name": "TV", "id": 4, "picSrc": "http://gif.tv/tv.png" },
-  { "name": "PC","id": 5, "picSrc": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05401859.png"}
+  products: [{ "name": "iPhone", "id": 1, "picSrc": "https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&.v=1504378258086", "shortDescription": "Iphone är en bra telefon, jag skulle rekommendera den väldigt mycket, jag skulle inte rekommendera samsung den suger iphone är bäst"},
+  { "name": "Macbook", "id": 2, "picSrc": "https://cdn.shopify.com/s/files/1/0259/1735/products/macbook_air_template_2048x.png?v=1511882855", "shortDescription": "macbook är också väldigt bra, kommer från samma märke som iphone. På loggan ser man ett äpple som är tagen en liten tugga från den är god."},
+  { "name": "Headphones", "id": 3, "picSrc": "https://www.beoplay.com/~/media/relation_spots/products/h4/1000x1000/h4_steelblue_1000x1000.png", "shortDescription": "headphones är väldigt bra tycker jag, då kan man lyssan på musik, min favoritartist är The Ark dom har väldigt bra låtar"},
+  { "name": "TV", "id": 4, "picSrc": "http://gif.tv/tv.png", "shortDescription": "En rimlig uppfinning, mitt favoritprogram är Hannah montana, det kan man kolla på på den här tv. Förövrigt gillar jag inte reklam, det får man också på den här tvn"},
+  { "name": "PC","id": 5, "picSrc": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05401859.png", "shortDescription": "PC är inte en jättebra uppfinning, jag skulle föredra macbook och det är för att jag gillar deras logga mer än PC. Jag hatar också windows"}
 ],
   data:[
   {"month": 'Nov', "price": 4000},

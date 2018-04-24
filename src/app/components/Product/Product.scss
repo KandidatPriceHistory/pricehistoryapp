@@ -1,17 +1,19 @@
 @import "../../style/pr-foundation";
-@import '../../style/_mixins.scss';
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 
 .productInfoBox{
-   height: 200px;
+   height: 50%;
    width: 100%;
    background-color: $pr-gray;
+   font-family: $body-font;
+
+
    @include breakpoint(xs){
      background-color: $pr-gray;
      height: 50%;
    };
 
-   #productPicture{
-     display: inline-block;
+   #productPictureImg{
      width: 90px;
      margin-left: 10px;
      margin-top: 10px;
@@ -21,12 +23,29 @@
      };
    }
    #titleInfoBox{
+     padding-top:10px;
+     margin-left: 100px;
      @include breakpoint(xs){
-        margin-left: 150px;
+        margin-left: 10%;
      };
+   }
+   #titleAndInfo{
+     display: inline-block;
+   }
+
+   #productInfoText{
+     display: inline-block;
+     @include breakpoint(xs){
+        display: inline-block;
+     };
+   }
+   #divInline{
+     display:inline-block
    }
 }
 
+
+// Below: Product Item List
 .productItem{
   background-color: $pr-dusk-darker;
   height: 100px;
