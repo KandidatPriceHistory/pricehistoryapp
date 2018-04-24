@@ -1,5 +1,4 @@
 @import "../../style/pr-foundation";
-@import '../../style/_mixins.scss';
 
 .productInfoBox{
    height: 200px;
@@ -26,11 +25,12 @@
      };
    }
 }
+//HÄR BÖRJAR HOMEPAGE scssEN
 
 .productItem{
-  background-color: $pr-dusk-darker;
+  background-color: $pr-white;
   height: 100px;
-  border: solid 1px white;
+  border-bottom: 2px solid $pr-off-gray;
 }
 .pictureList{
   height:80%;
