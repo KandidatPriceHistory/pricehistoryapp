@@ -38,20 +38,19 @@
   margin-left: 10px;
   margin-top: 10px;
 }
-.nameList{
+
+/*.nameList{
   text-decoration: none;
   background-color: white;
   margin-left: 100px;
   margin-bottom:70px;
-}
+}*/
 
-.productNameDiv{
+#productName{
+  text-decoration: none; //tar bort linklinen
   display: inline-block;
-  height: 100px;
-  width: 50px;
-  background-color: $pr-pink;
-  #produxtName{
-    color: $pr-black;
+  margin-left: 120px;
+  color: $pr-black;
+  text-decoration: none;
 
-  }
 }

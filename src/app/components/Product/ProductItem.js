@@ -8,7 +8,7 @@ const Product = ({ name, id, picSrc }) => (
     <div className = "productItem" key = {id} >
       <img src={picSrc} className="pictureList" />
       <div className= "productnameDiv">
-        <h3 id="productName"> {name}</h3>
+        <h3 id="productName"> {name} </h3>
       </div>
     </div>
   </Link>
