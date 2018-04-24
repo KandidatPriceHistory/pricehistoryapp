@@ -8,7 +8,7 @@ const initialState = {
   { "name": "Macbook", "id": 2, "picSrc": "https://cdn.shopify.com/s/files/1/0259/1735/products/macbook_air_template_2048x.png?v=1511882855"},
   { "name": "Headphones", "id": 3, "picSrc": "https://www.beoplay.com/~/media/relation_spots/products/h4/1000x1000/h4_steelblue_1000x1000.png"},
   { "name": "TV", "id": 4, "picSrc": "http://gif.tv/tv.png" },
-  { "name": "PC","id": 5, "picSrc": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05401859.png"}
+  { "name": "PC","id": 5, "picSrc": "https://ictatsgc.files.wordpress.com/2008/04/thinkcentre-a61-desktop-pc.jpg"}
 ],
   data:[
   {"month": 'Nov', "price": 4000},
