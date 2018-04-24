@@ -13,11 +13,18 @@
 
 
    #productPicture{
+     display: inline-block;
      width: 90px;
      margin-left: 10px;
      margin-top: 10px;
      @include breakpoint(xs){
-       width: 15%;
+       display: inline-block;
+       width: 10%;
+     };
+   }
+   #titleInfoBox{
+     @include breakpoint(xs){
+        margin-left: 150px;
      };
    }
 }
@@ -26,4 +33,14 @@
   background-color: $pr-dusk-darker;
   height: 100px;
   border: solid 1px white;
+}
+.pictureList{
+  height:80%;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.nameList{
+  background-color: white;
+  margin-left: 100px;
+  margin-bottom:70px;
 }

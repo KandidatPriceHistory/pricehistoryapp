@@ -13,7 +13,7 @@ export default class AppComponent extends Component {
    render() {
       return (
          <div>
-            <Route exact path="/product" component={Product} />
+            <Route exact path="/product/:id" component={Product} />
             <Route exact path="/" component={Home} />
             <Route exact path="/productpricehistory" component={productPriceHistory} />
             <Route exact path="/wrong" component={wrongPath} />
