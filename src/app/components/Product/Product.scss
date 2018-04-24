@@ -30,13 +30,15 @@
 .productItem{
   font-family: $body-font;
   background-color: $pr-white;
-  height: 100px;
+  height: 110px;
   border-bottom: 2px solid $pr-off-gray;
+  position: relative;
 }
 .pictureList{
-  height:80%;
+  height:70%;
   margin-left: 10px;
   margin-top: 10px;
+  position: absolute;
 }
 
 /*.nameList{
@@ -47,10 +49,10 @@
 }*/
 
 #productName{
+  padding-top: 10px;
+  position: absolute;
   text-decoration: none; //tar bort linklinen
   display: inline-block;
-  margin-left: 120px;
   color: $pr-black;
-  text-decoration: none;
-
+  margin-left: 150px;
 }
