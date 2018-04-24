@@ -9,7 +9,16 @@ const initialState = {
   { "name": "Headphones", "id": 3, "picSrc": "https://www.beoplay.com/~/media/relation_spots/products/h4/1000x1000/h4_steelblue_1000x1000.png"},
   { "name": "TV", "id": 4, "picSrc": "http://gif.tv/tv.png" },
   { "name": "PC","id": 5, "picSrc": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05401859.png"}
-], selectedProduct: null
+],
+  data:[
+  {"month": 'Nov', "price": 4000},
+  {"month": 'Dec', "price": 4000},
+  {"month": 'Jan', "price": 5030},
+  {"month": 'Feb', "price": 2780},
+  {"month": 'Mar', "price": 1890},
+  {"month": 'Apr', "price": 50},
+  {"month": 'Maj', "price": 3490}
+  ], selectedProduct: null
 };
 
 // TODO: sätta ett action, typ LOAD_PRODUCT när vi laddar sidan,
