@@ -1,13 +1,15 @@
-import { ADD_PRODUCT } from './action-types'
+import { LOAD_PRODUCT } from './action-types'
 import axios from 'axios';
 /*import REQ_DATA as types from '.action-types';
 import RECV_DATA as types from '.action-types';
 import RECV_ERROR as types from '.action-types';
-/*
-export const toggleProduct = text => ({
-  type: 'PRODUCT_PRESSED',
+*/
+
+export const loadProduct = id => ({
+  type: LOAD_PRODUCT,
   id
-})
+});
+/*
 function requestData() {
 	return {
     type: types.REQ_DATA
@@ -46,8 +48,3 @@ export const fetchData = url => {
     })
   }
 };*/
-
-export const addProduct = product => ({
-  type: ADD_PRODUCT,
-  payload: product
-});

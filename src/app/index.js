@@ -8,7 +8,6 @@ import productListApp from './reducers';
 
 // imports for routing
 import createHistory from 'history/createBrowserHistory';
-import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
 
 const history = createHistory();
@@ -25,7 +24,6 @@ render(
    document.getElementById('app')
  );
 //translate: renderar AppComponent i html koden med id "app"
-
 
 // Hot Module Replacement API
 if (module.hot) {
