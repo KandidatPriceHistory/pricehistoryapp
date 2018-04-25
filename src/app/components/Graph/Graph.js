@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import styles from "./Graph.scss";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend  } from 'recharts';
 
-const mapStateToProps = state => {
-  return { graph: state.graph };
-};
 
 
 export default class Graph extends Component {
