@@ -10,7 +10,7 @@ export default class productPriceHistory extends Component {
         return (
             <div>
                 <Header />
-                <ProductItemBox />
+
                 <Graph />
                 <Footer />
             </div>
