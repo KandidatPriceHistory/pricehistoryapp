@@ -18,7 +18,13 @@ const initialState = {
   {"month": 'Mar', "price": 1890},
   {"month": 'Apr', "price": 50},
   {"month": 'Maj', "price": 3490}
-  ], selectedProduct: null
+  ],
+  selectedProduct: null,
+  retailers: [
+    {"name":"Elgiganten", "id":1, "picSrc": "http://morbycentrum.se/w/wp-content/uploads/2014/02/Elgiganten_Phone_House_Blue.png"},
+    {"name": "MediaMarkt", "id": 2, "picSrc": "https://static04.bonial.se/butiker/media-markt/profile-46810.v6.png"},
+    {"name": "Elgruvan", "id": 3, "picSrc": "https://www.elgruvan.se/img/elgruvan-1507624499.jpg"}
+  ]
 };
 
 // TODO: sätta ett action, typ LOAD_PRODUCT när vi laddar sidan,
