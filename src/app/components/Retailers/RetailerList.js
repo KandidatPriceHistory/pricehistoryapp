@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import RetailerItem from './RetailerItem';
 
 // TODO: gör till class
-
+/*
 export default class RetailerList extends React.Component {
   render() {
     return (
