@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
 import ProductInfoBox from './Product/ProductInfoBox';
+import RetailerList from './Retailers/RetailerList';
 import { connect } from 'react-redux';
 import { loadProduct } from './../actions/index';
 
@@ -19,13 +20,16 @@ class Product extends Component {
          <div>
               <Header />
               <ProductInfoBox product={this.props.selectedProduct}/>
+              {console.log(this.props.retailers)}
+              <RetailerList retailers={this.props.retailers}/>
          </div>)
        }
    }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return { selectedProduct: state.selectedProduct, productId: ownProps.match.params.id }
+  // console.log(state.retailers);
+  return { selectedProduct: state.selectedProduct, productId: ownProps.match.params.id, retailers: state.retailers }
 }
 
 export default connect(mapStateToProps)(Product);
