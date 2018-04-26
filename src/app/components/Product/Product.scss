@@ -1,15 +1,31 @@
 @import "../../style/pr-foundation";
-@import '../../style/_mixins.scss';
-
+//Product scss
 .productInfoBox{
    height: 200px;
    width: 100%;
-   background-color: $pr-gray;
+   background-color: $pr-white;
+   position: relative;
    @include breakpoint(xs){
      background-color: $pr-gray;
      height: 50%;
    };
 
+.descriptionBox{
+  height: 70%;
+  width: inherit;
+  margin-top: 15px;
+  margin-left: 15px;
+  padding-top: 20px;
+  padding-left: 20px;
+  border: solid $pr-off-gray;
+  display: inline-block;
+  font-family: $body-font;
+  position: absolute;
+  @include breakpoint(xs){
+    display: inline-block;
+    width: 10%;
+  }
+};
 
    #productPicture{
      display: inline-block;
@@ -21,25 +37,52 @@
        width: 10%;
      };
    }
+
    #titleInfoBox{
+     font-family: $body-font;
+     padding-top: 10px;
      @include breakpoint(xs){
-        margin-left: 150px;
+        margin-left: 200px;
      };
    }
 }
 
+//HÄR BÖRJAR HOMEPAGE scssEN
+
 .productItem{
-  background-color: $pr-dusk-darker;
+  font-family: $body-font;
+  background-color: $pr-white;
   height: 100px;
-  border: solid 1px white;
-}
-.pictureList{
+  border-bottom: 2px solid $pr-off-gray;
+  position: relative;
+};
+
+#pictureList{
   height:80%;
   margin-left: 10px;
   margin-top: 10px;
-}
-.nameList{
-  background-color: white;
-  margin-left: 100px;
-  margin-bottom:70px;
-}
+  position: absolute;
+};
+
+#productName{
+  padding-top: 10px;
+  text-decoration: none; //tar bort linklinen
+  display: inline-block;
+  color: $pr-black;
+  margin-left: 130px;
+  position: absolute;
+};
+
+#descriptionHome{
+  font-family: $body-font;
+  color: $pr-black;
+  padding-top: 5px;
+  padding-left: 5px;
+  width: 70%;
+  height: 50px;
+  position: absolute;
+  margin-left: 120px;
+  margin-top: 35px;
+  display: inline-block;
+  border: dotted $pr-pink;
+};
