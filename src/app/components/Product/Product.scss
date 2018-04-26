@@ -1,5 +1,6 @@
 @import "../../style/pr-foundation";
-//Product scss
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
+
 .productInfoBox{
    height: 200px;
    width: 100%;
@@ -7,23 +8,22 @@
    position: relative;
    @include breakpoint(xs){
      background-color: $pr-gray;
-     height: 50%;
+     height: 300px;
    };
 
 .descriptionBox{
-  height: 70%;
-  width: inherit;
+  height: 60%;
   margin-top: 15px;
   margin-left: 15px;
-  padding-top: 20px;
   padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
   border: solid $pr-off-gray;
   display: inline-block;
   font-family: $body-font;
   position: absolute;
   @include breakpoint(xs){
     display: inline-block;
-    width: 10%;
   }
 };
 
@@ -34,21 +34,25 @@
      margin-top: 10px;
      @include breakpoint(xs){
        display: inline-block;
-       width: 10%;
+       width: 15%;
      };
    }
 
    #titleInfoBox{
      font-family: $body-font;
      padding-top: 10px;
+     margin-left: 130px;
      @include breakpoint(xs){
         margin-left: 200px;
      };
    }
+   #divInline{
+     display:inline-block
+   }
 }
 
-//HÄR BÖRJAR HOMEPAGE scssEN
 
+// Below: Product Item List
 .productItem{
   font-family: $body-font;
   background-color: $pr-white;
