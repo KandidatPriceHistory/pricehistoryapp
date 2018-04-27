@@ -8,6 +8,6 @@
   @include breakpoint(xs){
     width: 100;
     height: auto;
-    background-color: black;
+    background-color:$pr-darkgray ;
   }
 }

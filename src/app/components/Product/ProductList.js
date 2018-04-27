@@ -4,7 +4,6 @@ import ProductItem from './ProductItem';
 
 // TODO: gör till class
 
-
 const mapStateToProps = state => {
   return { products: state.products };
 };
