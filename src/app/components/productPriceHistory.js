@@ -2,9 +2,18 @@ import React, { Component } from 'react';
 import Header from './Header/Header.js';
 import Graph from './Graph/Graph.js';
 import Footer from './Footer/Footer';
+import { connect } from 'react-redux';
+import { loadGraph } from './../actions/index';
+import thunk from "redux-thunk";
+import reducers from "../reducers/index.js";
 
-export default class productPriceHistory extends Component {
-
+class productPriceHistory extends Component {
+  constructor(props){
+    super(props);
+  }
+  componentWillMount() {
+    this.props.dispatch(loadGraph(this.props.graph));
+  }
     render() {
         return (
             <div>
@@ -16,3 +25,10 @@ export default class productPriceHistory extends Component {
     }
 
 }
+
+const mapStateToProps = state => {
+  console.log('ye boi');
+  return { graph: state.graph }
+}
+
+export default connect(mapStateToProps)(Graph);
