@@ -8,12 +8,6 @@ import thunk from "redux-thunk";
 import reducers from "../reducers/index.js";
 
 class productPriceHistory extends Component {
-  constructor(props){
-    super(props);
-  }
-  componentWillMount() {
-    this.props.dispatch(loadGraph(this.props.graph));
-  }
     render() {
         return (
             <div>
@@ -31,4 +25,4 @@ const mapStateToProps = state => {
   return { graph: state.graph }
 }
 
-export default connect(mapStateToProps)(Graph);
+export default connect(mapStateToProps)(productPriceHistory);
