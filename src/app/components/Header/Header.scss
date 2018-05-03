@@ -7,7 +7,23 @@
   height: 50px;
   background-color: $pr-white;
   font-family: $body-font;
-  color: $pr-pink;
-  font-size: 22px;
   text-align: left;
+  //history
+
+}
+
+.icon-pr_logo_name{
+  font-size: 15px;
+  color: $pr-pink;
+  @include breakpoint(xs){
+    font-size: 22px;
+  };
+}
+
+.history{
+  font-size: 15px;
+  color: $pr-pink;
+  @include breakpoint(xs){
+    font-size: 22px;
+  };
 }

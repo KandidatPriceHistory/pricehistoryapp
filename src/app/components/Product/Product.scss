@@ -4,7 +4,7 @@
 .productInfoBox{
    height: 200px;
    width: 100%;
-   background-color: $pr-white;
+   background-color: $pr-gray;
    position: relative;
    @include breakpoint(xs){
      background-color: $pr-gray;
@@ -13,16 +13,17 @@
 
 .descriptionBox{
   height: 60%;
+  //width: 30%;
   margin-top: 15px;
-  margin-left: 15px;
+  margin-left: 10px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 10px;
-  border: solid $pr-off-gray;
   display: inline-block;
   font-family: $body-font;
   position: absolute;
   @include breakpoint(xs){
+    margin-left: 50px;
     display: inline-block;
   }
 };
@@ -88,5 +89,5 @@
   margin-left: 120px;
   margin-top: 35px;
   display: inline-block;
-  border: dotted $pr-pink;
+  //border: dotted $pr-pink;
 };
