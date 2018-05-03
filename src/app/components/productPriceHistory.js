@@ -3,8 +3,6 @@ import Header from './Header/Header.js';
 import Graph from './Graph/Graph.js';
 import Footer from './Footer/Footer';
 import { connect } from 'react-redux';
-import { loadGraph } from './../actions/index';
-import thunk from "redux-thunk";
 import reducers from "../reducers/index.js";
 
 class productPriceHistory extends Component {
@@ -21,7 +19,6 @@ class productPriceHistory extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('ye boi');
   return { graph: state.graph }
 }
 

@@ -5,9 +5,9 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend  } from '
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  console.log(state);
   return { graph: state.graph };
 };
+
 
  class Graph extends React.Component {
 
