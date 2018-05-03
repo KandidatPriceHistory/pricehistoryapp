@@ -1,7 +1,6 @@
-import { LOAD_PRODUCT } from '../actions/action-types'
+import { LOAD_PRODUCT } from '../actions/action-types';
+import { LOAD_RETAILERS } from '../actions/action-types';
 import axios from "axios";
-import { combineReducers } from 'redux';
-
 
 const initialState = {
   products: [{ "name": "iPhone", "id": 1, "picSrc": "https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&.v=1504378258086", "shortDescription": "Iphone är en bra telefon, jag skulle rekommendera den väldigt mycket, jag skulle inte rekommendera samsung den suger iphone är bäst"},
@@ -18,47 +17,58 @@ const initialState = {
   {"month": 'Mar', "price": 1890},
   {"month": 'Apr', "price": 50},
   {"month": 'Maj', "price": 3490}
-  ],
-  selectedProduct: null,
+],
+  selectedProduct: { "name": "Macbook", "id": 2, "picSrc": "https://cdn.shopify.com/s/files/1/0259/1735/products/macbook_air_template_2048x.png?v=1511882855", "shortDescription": "macbook är också väldigt bra, kommer från samma märke som iphone. På loggan ser man ett äpple som är tagen en liten tugga från den är god."},
   retailers: [
-    {"name":"Elgiganten", "id":1, "picSrc": "http://morbycentrum.se/w/wp-content/uploads/2014/02/Elgiganten_Phone_House_Blue.png"},
-    {"name": "MediaMarkt", "id": 2, "picSrc": "https://static04.bonial.se/butiker/media-markt/profile-46810.v6.png"},
+    {"name":"Elgiganten", "id":1, "picSrc": "http://morbycentrum.se/wp-content/uploads/2014/02/Elgiganten_Phone_House_Blue.png"},
+    {"name": "MediaMarkt", "id": 2, "picSrc": "http://static.feber.se/article_images/35/81/04/358104_1280.jpg"},
     {"name": "Elgruvan", "id": 3, "picSrc": "https://www.elgruvan.se/img/elgruvan-1507624499.jpg"}
-  ]
+  ],
 };
 
-// TODO: sätta ett action, typ LOAD_PRODUCT när vi laddar sidan,
-// att den lägger till alla produkter som hämtas från vår backend
 const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case LOAD_PRODUCT:
+   switch (action.type) {
+     case LOAD_PRODUCT:
       return {
+        selectedProduct: state.selectedProduct,
+    }
+
+      /*{
         products: state.products,
         selectedProduct: state.products.filter(el =>
         el.id == action.id
         //returnerar endast det product-objektet som är samma id som actionet (retunerar en lista)
-      )[0]};
-    default:
-      return state;
+      )[0]};*/
+    case LOAD_RETAILERS:
+      return {
+        retailers: state.retailers,
+      }
+   default:
+   return state;
   }
 };
+
+// const middleware = applyMiddleware(promise(), thunk, logger())
 /*
-function exampleReducer(state = {
-  isLoading: false,
-  data: [],
-  error: false},
-  action = null) {
-  switch(action.type) {
-		case types.RECV_ERROR:
-			return Object.assign({}, state, {isLoading: false, data: action.data, error: true});
-		case types.RECV_DATA:
-			return Object.assign({}, state, {isLoading: false, data: action.data, error: false });
-		case types.REQ_DATA:
-			return Object.assign({}, state, {isLoading: true, error: false });
-		default:
-			return state;
-	}
-};
+dispatch({
+  type: "FETCH_USERS",
+  payload: axios.get("http://rest.learncode.academy/api/wstern/users")
+})
+
+  /*
+  dispatch:({type: "FETCH_USERS_START"})
+  axios.get("http://rest.learncode.academy/api/wstern/users")
+    .then((reponse) => {
+      dispatch({
+        type: "RECEIVE_USERS",
+        payload: response.data
+      })
+    .catch((err) => {
+      dispatch({type: "FETCH_USERS_ERROR", payload: err})
+    })
+  })
+}
+
 
 const rootReducer = combineReducers ({
     router: routerStateReducer,
