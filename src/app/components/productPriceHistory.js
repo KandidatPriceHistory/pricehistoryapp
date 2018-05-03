@@ -4,6 +4,7 @@ import Graph from './Graph/Graph.js';
 import Footer from './Footer/Footer';
 import { connect } from 'react-redux';
 import reducers from "../reducers/index.js";
+import Factbox from "./Factbox/Factbox";
 
 class productPriceHistory extends Component {
     render() {
@@ -11,6 +12,7 @@ class productPriceHistory extends Component {
             <div>
                 <Header />
                 <Graph />
+                <Factbox />
                 <Footer />
             </div>
         );
@@ -21,5 +23,6 @@ class productPriceHistory extends Component {
 const mapStateToProps = state => {
   return { graph: state.graph }
 }
+
 
 export default connect(mapStateToProps)(productPriceHistory);
