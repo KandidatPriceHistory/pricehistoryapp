@@ -11,11 +11,6 @@ import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
 import rootReducer from "./reducers/index";
 
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
-
-// const middleware = applyMiddleware(thunk, logger())
-
 const history = createHistory();
 
 // initialize store
