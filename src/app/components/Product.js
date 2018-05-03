@@ -1,31 +1,34 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import ProductInfoBox from './Product/ProductInfoBox';
+import RetailerList from './Retailers/RetailerList';
 import { connect } from 'react-redux';
-import { loadProduct } from './../actions/index';
 
 class Product extends Component {
   constructor(props){
     super(props);
   }
-  componentWillMount() {
-    this.props.dispatch(loadProduct(this.props.productId));
-  }
+
    render() {
-      if(this.props.selectedProduct === undefined || this.props.selectedProduct === null) {
-        return <h2>Laddar...</h2>;
+      if(!this.props.selectedProduct) {
+        return (<h2>Laddar...</h2>);
       } else {
         return (
          <div>
               <Header />
               <ProductInfoBox product={this.props.selectedProduct}/>
+              <RetailerList retailers={this.props.retailers}/>
+              <Footer />
          </div>)
        }
    }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return { selectedProduct: state.selectedProduct, productId: ownProps.match.params.id }
+  console.log('i product, selected product:', state.selectedProduct)
+  console.log('i product, retailers:', state.retailers);
+  return { selectedProduct: state.selectedProduct, productId: ownProps.match.params.id, retailers: state.retailers }
 }
 
 export default connect(mapStateToProps)(Product);
