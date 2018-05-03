@@ -14,14 +14,14 @@ const errors = require('restify-errors');
 /**
  * Model Schema
  */
-const Product = require('../models/product');
+const Retailer = require('../models/retailer');
 
 module.exports = function(server) {
 
 	/**
 	 * POST
 	 */
-	server.post('/products', (req, res, next) => {
+	server.post('/retailers', (req, res, next) => {
 		if (!req.is('application/json')) {
 			return next(
 				new errors.InvalidContentError("Expects 'application/json'"),
@@ -30,8 +30,8 @@ module.exports = function(server) {
 
 		let data = req.body || {};
 
-		let product = new Product(data);
-		product.save(function(err) {
+		let retailer = new Retailer(data);
+		retailer.save(function(err) {
 			if (err) {
 				console.error(err);
 				return next(new errors.InternalError(err.message));
@@ -46,8 +46,8 @@ module.exports = function(server) {
 	/**
 	 * LIST
 	 */
-	server.get('/products', (req, res, next) => {
-		Product.apiQuery(req.params, function(err, docs) {
+	server.get('/retailers', (req, res, next) => {
+		Retailer.apiQuery(req.params, function(err, docs) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -63,8 +63,8 @@ module.exports = function(server) {
 	/**
 	 * GET
 	 */
-	server.get('/products/:product_id', (req, res, next) => {
-		Product.findOne({ _id: req.params.product_id }, function(err, doc) {
+	server.get('/retailers/:retailer_id', (req, res, next) => {
+		Retailer.findOne({ _id: req.params.retailer_id }, function(err, doc) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -80,7 +80,7 @@ module.exports = function(server) {
 	/**
 	 * UPDATE
 	 */
-	server.put('/products/:product_id', (req, res, next) => {
+	server.put('/retailers/:retailer_id', (req, res, next) => {
 		if (!req.is('application/json')) {
 			return next(
 				new errors.InvalidContentError("Expects 'application/json'"),
@@ -90,10 +90,10 @@ module.exports = function(server) {
 		let data = req.body || {};
 
 		if (!data._id) {
-			data = Object.assign({}, data, { _id: req.params.product_id });
+			data = Object.assign({}, data, { _id: req.params.retailer_id });
 		}
 
-		Product.findOne({ _id: req.params.product_id }, function(err, doc) {
+		Retailer.findOne({ _id: req.params.product_id }, function(err, doc) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -107,7 +107,7 @@ module.exports = function(server) {
 				);
 			}
 
-			Product.update({ _id: data._id }, data, function(err) {
+			Retailer.update({ _id: data._id }, data, function(err) {
 				if (err) {
 					console.error(err);
 					return next(
@@ -124,8 +124,8 @@ module.exports = function(server) {
 	/**
 	 * DELETE
 	 */
-	server.del('/products/:product_id', (req, res, next) => {
-		Product.remove({ _id: req.params.product_id }, function(err) {
+	server.del('/retailers/:retailer_id', (req, res, next) => {
+		Retailer.remove({ _id: req.params.retailer_id }, function(err) {
 			if (err) {
 				console.error(err);
 				return next(
