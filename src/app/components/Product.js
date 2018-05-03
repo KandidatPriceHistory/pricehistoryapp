@@ -11,9 +11,6 @@ class Product extends Component {
   }
 
    render() {
-      if(!this.props.selectedProduct) {
-        return (<h2>Laddar...</h2>);
-      } else {
         return (
          <div>
               <Header />
@@ -22,13 +19,10 @@ class Product extends Component {
               <Footer />
          </div>)
        }
-   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('i product, selected product:', state.selectedProduct)
-  console.log('i product, retailers:', state.retailers);
-  return { selectedProduct: state.selectedProduct, productId: ownProps.match.params.id, retailers: state.retailers }
+  return { selectedProduct: state.selectedProduct, retailers: state.retailers }
 }
 
 export default connect(mapStateToProps)(Product);
