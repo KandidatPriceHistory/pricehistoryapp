@@ -7,6 +7,7 @@ import reducers from "../reducers/index.js"
 
 import ProductInfoBox from './Product/ProductInfoBox';
 
+import Factbox from "./Factbox/Factbox";
 
 class productPriceHistory extends Component {
     render() {
@@ -15,6 +16,7 @@ class productPriceHistory extends Component {
                 <Header />
                 <ProductInfoBox product={this.props.selectedProduct}/>
                 <Graph />
+                <Factbox />
                 <Footer />
             </div>
         );
@@ -24,5 +26,6 @@ class productPriceHistory extends Component {
 const mapStateToProps = state => {
   return { graph: state.graph, selectedProduct: state.selectedProduct }
 }
+
 
 export default connect(mapStateToProps)(productPriceHistory);
