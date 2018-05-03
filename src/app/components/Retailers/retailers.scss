@@ -28,6 +28,7 @@
 };
 
 .graphButton {
+  margin-top: 35px;
   margin-left: 80%;
   background-color: $pr-blue-dark;
   color: white;
@@ -36,6 +37,7 @@
   font-family: $body-font;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  border-radius: 20px;
 }
 
 .graphButton:hover {

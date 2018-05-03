@@ -19,7 +19,7 @@ const initialState = {
   {"month": 'Apr', "price": 50},
   {"month": 'Maj', "price": 3490}
 ],
-  selectedProduct: { "name": "Macbook", "id": 2, "picSrc": "https://cdn.shopify.com/s/files/1/0259/1735/products/macbook_air_template_2048x.png?v=1511882855", "shortDescription": "macbook är också väldigt bra, kommer från samma märke som iphone. På loggan ser man ett äpple som är tagen en liten tugga från den är god."},
+  selectedProduct: { "name": "Macbook", "id": 2, "picSrc": "https://cdn.shopify.com/s/files/1/0259/1735/products/macbook_air_template_2048x.png?v=1511882855", "shortDescription": "Short description of the selected product"},
   retailers: [
     {"name":"Elgiganten", "id":1, "picSrc": "http://morbycentrum.se/wp-content/uploads/2014/02/Elgiganten_Phone_House_Blue.png"},
     {"name": "MediaMarkt", "id": 2, "picSrc": "http://static.feber.se/article_images/35/81/04/358104_1280.jpg"},
