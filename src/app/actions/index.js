@@ -1,4 +1,5 @@
 import { LOAD_PRODUCT } from './action-types';
+import { LOAD_GRAPH } from './action-types';
 import { LOAD_RETAILERS } from './action-types';
 import axios from 'axios';
 /*
@@ -9,6 +10,11 @@ import RECV_ERROR as types from '.action-types';
 
 export const loadProduct = id => ({
   type: LOAD_PRODUCT,
+  id
+});
+
+export const loadGraph = id => ({
+  type: LOAD_GRAPH,
   id
 });
 

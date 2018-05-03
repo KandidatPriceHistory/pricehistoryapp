@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from "./Product.scss"
+import { loadProduct } from '../../actions/index'
 
 export default class ProductInfoBox extends React.Component {
   render() {

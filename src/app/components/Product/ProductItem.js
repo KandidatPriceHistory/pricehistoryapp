@@ -13,6 +13,7 @@ const Product = ({ name, id, picSrc }) => (
       <div id="descriptionHome">
         short description of {`product ${id}`}
       </div>
+
     </div>
   </Link>
 )

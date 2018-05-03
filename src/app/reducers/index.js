@@ -1,4 +1,5 @@
 import { LOAD_PRODUCT } from '../actions/action-types';
+import { LOAD_GRAPH } from '../actions/action-types';
 import { LOAD_RETAILERS } from '../actions/action-types';
 import axios from "axios";
 
@@ -9,7 +10,7 @@ const initialState = {
   { "name": "TV", "id": 4, "picSrc": "http://gif.tv/tv.png", "shortDescription": "En rimlig uppfinning, mitt favoritprogram är Hannah montana, det kan man kolla på på den här tv. Förövrigt gillar jag inte reklam, det får man också på den här tvn"},
   { "name": "PC","id": 5, "picSrc": "https://ictatsgc.files.wordpress.com/2008/04/thinkcentre-a61-desktop-pc.jpg", "shortDescription": "PC är inte en jättebra uppfinning, jag skulle föredra macbook och det är för att jag gillar deras logga mer än PC. Jag hatar också windows"}
 ],
-  data:[
+  graph:[
   {"month": 'Nov', "price": 4000},
   {"month": 'Dec', "price": 4000},
   {"month": 'Jan', "price": 5030},
@@ -32,6 +33,10 @@ const rootReducer = (state = initialState, action) => {
       return {
         selectedProduct: state.selectedProduct,
     }
+       case LOAD_RETAILERS:
+      return {
+        retailers: state.retailers,
+      }
 
       /*{
         products: state.products,
@@ -39,12 +44,13 @@ const rootReducer = (state = initialState, action) => {
         el.id == action.id
         //returnerar endast det product-objektet som är samma id som actionet (retunerar en lista)
       )[0]};*/
-    case LOAD_RETAILERS:
-      return {
-        retailers: state.retailers,
-      }
-   default:
-   return state;
+      case LOAD_GRAPH:
+        return {
+          graph: state.graph
+        }
+
+    default:
+      return state;
   }
 };
 
@@ -67,11 +73,6 @@ dispatch({
       dispatch({type: "FETCH_USERS_ERROR", payload: err})
     })
   })
-}
+}*/
 
-
-const rootReducer = combineReducers ({
-    router: routerStateReducer,
-    example: exampleReducer
-})*/
 export default rootReducer;
