@@ -18,10 +18,9 @@ class Product extends Component {
      if (this.props.fetched){
        return (
         <div>
-             <p> {this.props.product.manufacturer.name} </p>
              <Header />
-             <ProductInfoBox product={this.props.selectedProduct}/>
-             <RetailerList retailers={this.props.retailers}/>
+             <ProductInfoBox product={this.props.product}/>
+             <RetailerList product={this.props.product}/>
              <Footer />
         </div>
         )
@@ -37,7 +36,6 @@ class Product extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     selectedProduct: state.selectedProduct,
-    retailers: state.retailers,
     product: state.product,
     fetching: state.fetching,
     fetched: state.fetched,
