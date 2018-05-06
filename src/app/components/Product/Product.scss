@@ -72,10 +72,8 @@
 #productName{
   padding-top: 10px;
   text-decoration: none; //tar bort linklinen
-  display: inline-block;
   color: $pr-black;
   margin-left: 130px;
-  position: absolute;
 };
 
 #descriptionHome{
@@ -87,6 +85,26 @@
   height: 50px;
   position: absolute;
   margin-left: 120px;
-  display: inline-block;
   //border: dotted $pr-pink;
 };
+
+.goToRetailersButton {
+  margin-top: 35px;
+  margin-left: 80%;
+  background-color: $pr-blue-dark;
+  color: white;
+  padding: 6px 15px;
+  font-size: 14px;
+  font-family: $body-font;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.goToRetailersButton:hover {
+  background-color: white;
+  border: 2px solid $pr-blue-dark;
+  color: black;
+
+}

@@ -6,23 +6,39 @@ import { connect } from 'react-redux';
 import reducers from "../reducers/index.js"
 
 import ProductInfoBox from './Product/ProductInfoBox';
+import { fetchProduct } from '../actions/index';
 
 
 class productPriceHistory extends Component {
-    render() {
-        return (
-            <div>
-                <Header />
-                <ProductInfoBox product={this.props.selectedProduct}/>
-                <Graph />
-                <Footer />
-            </div>
-        );
+  componentWillMount() {
+    this.props.dispatch(fetchProduct());
+  }
+  render() {
+    if (this.props.fetched){
+      return (
+       <div>
+            <Header />
+            <ProductInfoBox product={this.props.product}/>
+            <Graph />
+            <Footer />
+       </div>
+       )
+     }
+     else {
+       return(
+         <h2> Laddar ... </h2>
+       )
+      }
     }
 }
 
 const mapStateToProps = state => {
-  return { graph: state.graph, selectedProduct: state.selectedProduct }
+  return {
+    graph: state.graph,
+    product: state.product,
+    fetching: state.fetching,
+    fetched: state.fetched,
+   }
 }
 
 export default connect(mapStateToProps)(productPriceHistory);

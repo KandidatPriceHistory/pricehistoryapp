@@ -9,27 +9,36 @@
 }
 
 .pictureList{
-  height:30%;
+  max-height: 40px;
   margin-left: 10px;
   margin-top: 10px;
-  position: absolute;
-  @include breakpoint(xs){
-    height: 30%;
-  };
 };
 
+.pictureDiv{
+  display: inline-block;
+}
+
+.textStoreAndPrice{
+  display: inline-block;
+}
 .retailerName{
   padding-top: 10px;
   text-decoration: none; //tar bort linklinen
-  display: inline-block;
   color: $pr-black;
   margin-left: 170px;
-  position: absolute;
+  display: inline-block;
 };
 
+.currentPrice{
+  margin-left:170px;
+}
+
+.linkTo{
+  display: inline-block;
+}
 .graphButton {
+  margin-left: 300px;
   margin-top: 35px;
-  margin-left: 80%;
   background-color: $pr-blue-dark;
   color: white;
   padding: 6px 15px;
@@ -38,16 +47,17 @@
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border-radius: 20px;
+  display:inline-block;
 }
 
 .graphButton:hover {
   background-color: white;
   border: 2px solid $pr-blue-dark;
   color: black;
-
 }
 
+/*
 #arrowButton{
   margin-left: 80%;
   display: inline-block;
-}
+}*/

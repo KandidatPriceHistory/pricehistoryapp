@@ -35,7 +35,6 @@ class Product extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    selectedProduct: state.selectedProduct,
     product: state.product,
     fetching: state.fetching,
     fetched: state.fetched,

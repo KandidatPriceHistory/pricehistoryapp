@@ -19,15 +19,23 @@ export default class Retailer extends React.Component {
   render() {
     return (
       <div className = "retailerItem" key = {this.props.retailer.id} >
-        <img
-        src={ this.getLogo() }
-        className="pictureList"
-        />
-        <h3 className = "retailerName">{this.props.retailer.retailerName}</h3>
-      {/*<div id="arrowButton">
+        <div className="pictureDiv">
+          <img
+            src={ this.getLogo() }
+            className="pictureList"
+          />
+        </div>
+
+        <div className="textStoreAndPrice">
+          <h3 className = "retailerName">{this.props.retailer.retailerName}</h3>
+          <p key={this.props.retailer.id} className="currentPrice">
+            Current price: {this.props.retailer.price} {this.props.retailer.currency}
+          </p>
+        </div>
+        {/*<div id="arrowButton">
         <i className= {`icon-arrow-right`} />
-      </div>*/}
-        <Link to = "/productpricehistory" >
+        </div>*/}
+        <Link to = "/productpricehistory" className="linkTo">
           <button type="button" className="graphButton"> Go to graph </button>
         </Link>
       </div>
