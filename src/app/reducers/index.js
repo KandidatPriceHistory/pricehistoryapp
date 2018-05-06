@@ -2,8 +2,13 @@ import { LOAD_PRODUCT } from '../actions/action-types';
 import { LOAD_GRAPH } from '../actions/action-types';
 import { LOAD_RETAILERS } from '../actions/action-types';
 import axios from "axios";
+//import store from '../store';
 
 const initialState = {
+  fetching: false,
+  fetched: false,
+  product: null,
+  error: null,
   products: [{ "name": "iPhone", "id": 1, "picSrc": "https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&.v=1504378258086", "shortDescription": "Iphone är en bra telefon, jag skulle rekommendera den väldigt mycket, jag skulle inte rekommendera samsung den suger iphone är bäst"},
   { "name": "Macbook", "id": 2, "picSrc": "https://cdn.shopify.com/s/files/1/0259/1735/products/macbook_air_template_2048x.png?v=1511882855", "shortDescription": "macbook är också väldigt bra, kommer från samma märke som iphone. På loggan ser man ett äpple som är tagen en liten tugga från den är god."},
   { "name": "Headphones", "id": 3, "picSrc": "https://www.beoplay.com/~/media/relation_spots/products/h4/1000x1000/h4_steelblue_1000x1000.png", "shortDescription": "headphones är väldigt bra tycker jag, då kan man lyssan på musik, min favoritartist är The Ark dom har väldigt bra låtar"},
@@ -28,6 +33,7 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
+  console.log("reducer");
    switch (action.type) {
      case LOAD_PRODUCT:
       return {
@@ -49,30 +55,40 @@ const rootReducer = (state = initialState, action) => {
           graph: state.graph
         }
 
+      case "FETCH_PRODUCT_START": {
+        return {...state, fetching: true}
+        break;
+      }
+      case "RECIEVE_PRODUCT": {
+        return {
+          ...state,
+          fetching: false,
+          fetched: true,
+          product: action.payload,
+        }
+        break;
+      }
+      case "FETCH_PRODUCT_ERROR": {
+        return {...state, fetching: false, error: action.payload}
+        break;
+      }
     default:
       return state;
   }
 };
 
-// const middleware = applyMiddleware(promise(), thunk, logger())
-/*
-dispatch({
-  type: "FETCH_USERS",
-  payload: axios.get("http://rest.learncode.academy/api/wstern/users")
-})
-
-  /*
-  dispatch:({type: "FETCH_USERS_START"})
-  axios.get("http://rest.learncode.academy/api/wstern/users")
+/*store.dispatch((dispatch) => {
+  dispatch({type: "FETCH_PRODUCT_START"})
+  axios.get("https://www.pricerunner.se/public/v1/pl/1-4257585/se?urlName=Mobiltelefoner/Apple-iPhone-X-64GB-priser&offer_sort=pricewithship")
     .then((reponse) => {
       dispatch({
-        type: "RECEIVE_USERS",
+        type: "RECIEVE_PRODUCT",
         payload: response.data
       })
-    .catch((err) => {
-      dispatch({type: "FETCH_USERS_ERROR", payload: err})
     })
-  })
-}*/
+    .catch((err) => {
+      dispatch({type: "FETCH_PRODUCT_ERROR", payload: err})
+    })
+})*/
 
-export default rootReducer;
+export { rootReducer };

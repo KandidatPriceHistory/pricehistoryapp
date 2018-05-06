@@ -11,6 +11,7 @@ export default class RetailerList extends React.Component {
             name={el.name}
             id={el.id}
             picSrc={el.picSrc}
+            key = {el.id}
           />
         ))}
       </div>

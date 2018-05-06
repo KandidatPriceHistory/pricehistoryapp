@@ -23,26 +23,22 @@ export const loadRetailers = id => ({
   id
 })
 
-/*
-function requestData() {
-	return {
-    type: types.REQ_DATA
+export function fetchProduct() {
+  return function(dispatch) {
+    dispatch({type: "FETCH_PRODUCT_START"})
+    axios.get("https://www.pricerunner.se/public/v1/pl/1-4257585/se?urlName=Mobiltelefoner/Apple-iPhone-X-64GB-priser&offer_sort=pricewithship")
+      .then((response) => {
+        dispatch({
+          type: "RECIEVE_PRODUCT",
+          payload: response.data
+        })
+      })
+      .catch((err) => {
+        dispatch({type: "FETCH_PRODUCT_ERROR", payload: err})
+      })
   }
-};
-
-function receiveData(json) {
-	return{
-		type: types.RECV_DATA,
-		data: json
-	}
-};
-
-function receiveError(json) {
-	return {
-		type: types.RECV_ERROR,
-		data: json
-	}
-};
+}
+/*
 
 export const fetchData = url => {
   return function(dispatch) {
