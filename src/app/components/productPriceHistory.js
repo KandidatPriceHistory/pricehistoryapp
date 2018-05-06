@@ -8,6 +8,7 @@ import reducers from "../reducers/index.js"
 import ProductInfoBox from './Product/ProductInfoBox';
 import { fetchProduct } from '../actions/index';
 
+import Factbox from "./Factbox/Factbox";
 
 class productPriceHistory extends Component {
   componentWillMount() {
@@ -20,6 +21,7 @@ class productPriceHistory extends Component {
             <Header />
             <ProductInfoBox product={this.props.product}/>
             <Graph />
+            <Factbox />
             <Footer />
        </div>
        )
@@ -40,5 +42,6 @@ const mapStateToProps = state => {
     fetched: state.fetched,
    }
 }
+
 
 export default connect(mapStateToProps)(productPriceHistory);
