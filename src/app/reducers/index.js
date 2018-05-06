@@ -2,7 +2,6 @@ import { LOAD_PRODUCT } from '../actions/action-types';
 import { LOAD_GRAPH } from '../actions/action-types';
 import { LOAD_RETAILERS } from '../actions/action-types';
 import axios from "axios";
-//import store from '../store';
 
 const initialState = {
   fetching: false,
@@ -65,19 +64,5 @@ const rootReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-/*store.dispatch((dispatch) => {
-  dispatch({type: "FETCH_PRODUCT_START"})
-  axios.get("https://www.pricerunner.se/public/v1/pl/1-4257585/se?urlName=Mobiltelefoner/Apple-iPhone-X-64GB-priser&offer_sort=pricewithship")
-    .then((reponse) => {
-      dispatch({
-        type: "RECIEVE_PRODUCT",
-        payload: response.data
-      })
-    })
-    .catch((err) => {
-      dispatch({type: "FETCH_PRODUCT_ERROR", payload: err})
-    })
-})*/
 
 export { rootReducer };

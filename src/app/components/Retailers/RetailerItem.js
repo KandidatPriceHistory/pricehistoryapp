@@ -32,9 +32,6 @@ export default class Retailer extends React.Component {
             Current price: {this.props.retailer.price} {this.props.retailer.currency}
           </p>
         </div>
-        {/*<div id="arrowButton">
-        <i className= {`icon-arrow-right`} />
-        </div>*/}
         <Link to = "/productpricehistory" className="linkTo">
           <button type="button" className="graphButton"> Go to graph </button>
         </Link>
