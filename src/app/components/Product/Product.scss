@@ -1,9 +1,9 @@
 @import "../../style/pr-foundation";
-@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
-
+//Product scss
 .productInfoBox{
-   height: 300px;
+   height: 200px;
    width: 100%;
+   background-color: $pr-white;
    position: relative;
    display: inline-block;
    @include breakpoint(xs){
@@ -14,18 +14,17 @@
    };
 
 .descriptionBox{
-  // height: 60%;
-  //width: 30%;
+  height: 70%;
+  width: inherit;
   margin-top: 15px;
-  margin-left: 10px;
+  margin-left: 15px;
+  padding-top: 20px;
   padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
+  //border: solid $pr-off-gray;
   display: inline-block;
   font-family: $body-font;
   position: absolute;
   @include breakpoint(xs){
-    margin-left: 50px;
     display: inline-block;
   }
 };
@@ -49,13 +48,10 @@
         margin-left: 230px;
      };
    }
-   #divInline{
-     display:inline-block
-   }
 }
 
+//HÄR BÖRJAR HOMEPAGE scssEN
 
-// Below: Product Item List
 .productItem{
   font-family: $body-font;
   background-color: $pr-white;
@@ -87,7 +83,8 @@
   height: 50px;
   position: absolute;
   margin-left: 120px;
-  //border: dotted $pr-pink;
+  margin-top: 35px;
+  display: inline-block;
 };
 
 .goToRetailersButton {
