@@ -21,8 +21,8 @@ class productPriceHistory extends Component {
        <div>
             <Header />
             <ProductInfoBox product={this.props.product}/>
-            <Graph />
             <Factbox />
+            <Graph />
             <Footer />
        </div>
        )
