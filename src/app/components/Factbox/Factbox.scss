@@ -5,9 +5,17 @@
   background-color:$pr-dusk-lighter;
   width: 100;
   height: 150px;
+  margin-bottom: 15px;
+  @include breakpoint(xs){
+    background-color: $pr-dusk-lighter;
+    height: 300px;
+    margin-bottom: 15px;
+
+  };
 }
 
-#productName{
+.productName{
   font-family: $body-font;
-  position: relative;
-};
+  position: margin-left;
+  margin-bottom: 15px;
+}

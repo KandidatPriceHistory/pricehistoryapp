@@ -2,24 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ProductItem from './ProductItem';
 
-// TODO: gör till class
-
-const mapStateToProps = state => {
-  return { products: state.products };
-};
-
-const connectedList = ({ products }) => (
-  <div className = "listProducts" >
-    { products.map(el => (
-      <ProductItem
-        name={el.name}
-        id={el.id}
-        picSrc={el.picSrc}
-      />
-    ))}
-  </div>
-);
-
-const ProductList = connect(mapStateToProps)(connectedList);
-
-export default ProductList;
+export default class productList extends React.Component {
+  render() {
+    return (
+      <div className = "listProducts" >
+        <ProductItem product={this.props.product} />
+        {/*
+        LATER:
+        { this.props.products.map(el => (
+          <ProductItem product={el}/>
+        ))}*/}
+      </div>
+    )
+  }
+}
