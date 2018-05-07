@@ -17,12 +17,10 @@ const ProductSchema = new mongoose.Schema(
     productid: {
       type: String,
       required: true,
-      trim: true,
     },
     description: {
 			type: String,
 			required: true,
-			trim: true,
 		},
     product_picture: {
 			type: String,
