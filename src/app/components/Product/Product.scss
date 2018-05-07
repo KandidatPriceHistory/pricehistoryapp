@@ -26,7 +26,6 @@
   position: absolute;
   @include breakpoint(xs){
     display: inline-block;
-    width: 10%;
   }
 };
 
@@ -84,12 +83,8 @@
   height: 50px;
   position: absolute;
   margin-left: 120px;
-<<<<<<< HEAD
   margin-top: 35px;
   display: inline-block;
-=======
-  //border: dotted $pr-pink;
->>>>>>> master
 };
 
 .goToRetailersButton {
