@@ -45,6 +45,7 @@
     "history": "^4.7.2",
     "ignore-loader": "^0.1.2",
     "jest": "^22.4.3",
+    "mongodb": "^3.0.7",
     "mongoose": "^5.0.17",
     "mongoose-string-query": "^0.2.5",
     "mongoose-timestamp": "^0.6.0",
