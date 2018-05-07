@@ -21,13 +21,15 @@
 .textStoreAndPrice{
   display: inline-block;
 }
+
 .retailerName{
   padding-top: 10px;
   text-decoration: none; //tar bort linklinen
   color: $pr-black;
   margin-left: 170px;
   display: inline-block;
-};
+
+}
 
 .currentPrice{
   margin-left:170px;
@@ -36,6 +38,7 @@
 .linkTo{
   display: inline-block;
 }
+
 .graphButton {
   margin-left: 300px;
   margin-top: 35px;

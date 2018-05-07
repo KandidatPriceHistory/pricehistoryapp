@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from "./retailers.scss"
 import { Link } from 'react-router-dom';
-import loggaSaknas from './loggaSaknas.jpg';
+import loggaSaknas40120 from './loggaSaknas40120.png';
 
 export default class Retailer extends React.Component {
 
   getLogo() {
     let logo = this.props.retailer.retailerLogo;
     if (logo === "") {
-      logo = loggaSaknas;
+      logo = loggaSaknas40120;
     } else {
       logo = "https://images.pricerunner.com/images/120x40/logos/"+logo;
     }

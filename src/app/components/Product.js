@@ -14,7 +14,7 @@ class Product extends Component {
     this.props.dispatch(fetchProduct());
   }
 
-   render() {
+  render() {
      if (this.props.fetched){
        return (
         <div>
