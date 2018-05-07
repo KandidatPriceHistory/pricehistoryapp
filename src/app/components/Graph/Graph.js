@@ -15,7 +15,9 @@ const mapStateToProps = state => {
      console.log(this.props.graph);
       return (
         <div className = "graphDiv">
-            <LineChart className="class" width={400} height={400} data={this.props.graph} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+
+            <LineChart className = "theGraph" width={400} height={400} data={this.props.graph} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+
               <Line type="monotone" dataKey="price" stroke="#8884d8" />
               <CartesianGrid stroke ="#ccc" strokeDasharray="5 5" />
               <XAxis dataKey="month" />
