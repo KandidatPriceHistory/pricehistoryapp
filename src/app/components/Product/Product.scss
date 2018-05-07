@@ -6,9 +6,12 @@
    width: 100%;
    background-color: $pr-gray;
    position: relative;
+   display: inline-block;
    @include breakpoint(xs){
      background-color: $pr-gray;
      height: 300px;
+     display: inline-block;
+
    };
 
 .descriptionBox{

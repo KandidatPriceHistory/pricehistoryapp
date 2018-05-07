@@ -5,9 +5,26 @@
   background-color:$pr-darkgray;
   width:100;
   height: 100;
+  display: inline-block;
+  margin-bottom: 15px;
   @include breakpoint(xs){
     width: 100;
     height: auto;
     background-color:$pr-darkgray ;
+    display: inline-block;
+
+  }
+}
+
+.theGraph{
+  background-color:$pr-darkgray;
+  width:100;
+  height: 100;
+  @include breakpoint(xs){
+    width: 100;
+    height: auto;
+    background-color:$pr-darkgray ;
+    display: inline-block;
+
   }
 }

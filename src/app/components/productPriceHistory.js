@@ -14,8 +14,8 @@ class productPriceHistory extends Component {
         return (
             <div>
                 <Header />
-                <ProductInfoBox product={this.props.selectedProduct}/>
-                <Graph />
+                <ProductInfoBox product={this.props.selectedProduct}/> <Graph />
+
                 <Factbox />
                 <Footer />
             </div>
