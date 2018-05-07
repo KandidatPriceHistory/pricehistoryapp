@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 
 .productInfoBox{
-   height: 200px;
+   height: 300px;
    width: 100%;
-   background-color: $pr-gray;
    position: relative;
    @include breakpoint(xs){
      background-color: $pr-gray;
@@ -12,7 +11,7 @@
    };
 
 .descriptionBox{
-  height: 60%;
+  // height: 60%;
   //width: 30%;
   margin-top: 15px;
   margin-left: 10px;
