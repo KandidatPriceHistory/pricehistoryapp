@@ -5,9 +5,12 @@
    width: 100%;
    position: relative;
    display: inline-block;
+   margin-bottom: 15px;
    @include breakpoint(xs){
      height: 300px;
      display: inline-block;
+     float: left;
+     width: 60%;
 
    };
 
