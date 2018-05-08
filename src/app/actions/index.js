@@ -21,11 +21,11 @@ export const loadRetailers = id => ({
 export function fetchProduct() {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
-    axios.get("https://www.pricerunner.se/public/v1/pl/1-4257585/se?urlName=Mobiltelefoner/Apple-iPhone-X-64GB-priser&offer_sort=pricewithship")
+    axios.get("http://localhost:3000/products")
       .then((response) => {
         dispatch({
           type: "RECIEVE_PRODUCT",
-          payload: response.data
+          payload: response.data[0]
         })
       })
       .catch((err) => {
