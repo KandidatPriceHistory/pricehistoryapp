@@ -19,12 +19,14 @@ class productPriceHistory extends Component {
     if (this.props.fetched){
       return (
        <div>
+        <div>
             <Header />
             <ProductInfoBox product={this.props.product}/>
             <Graph />
             <Factbox />
-            <Footer />
        </div>
+       </div>
+
        )
      }
      else {
