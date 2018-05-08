@@ -4,7 +4,7 @@
   font-family: $body-font;
   background-color: $pr-white;
   height: 100px;
-  border-bottom: 2px solid $pr-off-gray;
+  border-top: 2px solid $pr-off-gray;
   position: relative;
 }
 
@@ -21,13 +21,15 @@
 .textStoreAndPrice{
   display: inline-block;
 }
+
 .retailerName{
   padding-top: 10px;
   text-decoration: none; //tar bort linklinen
   color: $pr-black;
   margin-left: 170px;
   display: inline-block;
-};
+
+}
 
 .currentPrice{
   margin-left:170px;
@@ -36,6 +38,7 @@
 .linkTo{
   display: inline-block;
 }
+
 .graphButton {
   margin-left: 300px;
   margin-top: 35px;
