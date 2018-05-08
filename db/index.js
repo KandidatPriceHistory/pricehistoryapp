@@ -11,7 +11,7 @@ const restifyPlugins = require('restify-plugins');
 /**
   * Initialize Server
   */
-const server = restify.createServer({
+global.server = restify.createServer({
 	name: config.name,
 	version: config.version,
 });
@@ -40,7 +40,9 @@ server.listen(config.port, () => {
 	});
 
 	db.once('open', () => {
-	    require('./routes')(server);
+	    require('./routes/product');
+			require('./routes/retailer');
+			require('./routes/pricehistory');
 	    console.log(`Server is listening on port ${config.port}`);
 	});
 });
