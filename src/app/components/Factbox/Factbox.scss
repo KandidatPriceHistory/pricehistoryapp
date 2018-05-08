@@ -4,13 +4,13 @@
 .factboxDiv{
   background-color:$pr-dusk-lighter;
   width: 100;
-  height: 150px;
+  height: 100;
   margin-bottom: 15px;
   @include breakpoint(xs){
     background-color: $pr-dusk-lighter;
-    height: 300px;
+    height: 160px;
     margin-bottom: 15px;
-    display: inline-block;
+    width: 100;
 
 
   };
@@ -18,6 +18,6 @@
 
 .productName{
   font-family: $body-font;
-  position: margin-left;
+  
   margin-bottom: 15px;
 }
