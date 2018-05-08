@@ -1,10 +1,10 @@
 /*
 CRUD operations:
-POST /pricehistory (Creates a todo item)
-GET /pricehistory (Lists all todos in the queue)
-GET /pricehistory/:pricehistory_id (Gets a specific todo item in the queue)
-PUT /pricehistory/:pricehistory_id (Updates a specific todo item in the queue)
-DELETE /pricehistory/:pricehistory_id (Destroys a specific todo item in the queue)*/
+POST /pricehistory (Creates a producthistory item)
+LIST /pricehistory (Lists all producthistorys in the queue)
+GET /pricehistory/:pricehistory_id (Gets a specific producthistory item in the queue)
+PUT /pricehistory/:pricehistory_id (Updates a specific producthistory item in the queue)
+DELETE /pricehistory/:pricehistory_id (Destroys a specific producthistory item in the queue)*/
 
 /**
  * Module Dependencies
