@@ -11,6 +11,7 @@ import { fetchProduct } from '../actions/index';
 import Factbox from "./Factbox/Factbox";
 
 class productPriceHistory extends Component {
+
   componentWillMount() {
     this.props.dispatch(fetchProduct());
   }
@@ -31,6 +32,7 @@ class productPriceHistory extends Component {
          <h2> Laddar ... </h2>
        )
       }
+
     }
 }
 

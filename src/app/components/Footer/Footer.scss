@@ -8,6 +8,22 @@
   background-color: $pr-white-20;
   font-family: $body-font;
   text-align: center;
-  //background-image: url('https://sherwin.scene7.com/is/image/sw/color-swatch?_tparam_size=250,250&layer=comp&_tparam_color=019187');
+}
 
+
+
+i{
+  padding: 0px 0px 2px 2px;
+  font-size: 40px;
+  align-items: right;
+  color: $pr-black;
+}
+
+i.nounderline:link{
+  text-decoration: none; //tar bort linklinen
+}
+
+hr{
+
+  border: solid 1px $pr-off-gray;
 }
