@@ -1,10 +1,10 @@
 /*
 CRUD operations:
-POST /todos (Creates a todo item)
-GET /todos (Lists all todos in the queue)
-GET /todos/:product_id (Gets a specific todo item in the queue)
-PUT /todos/:product_id (Updates a specific todo item in the queue)
-DELETE /todos/:product_id (Destroys a specific todo item in the queue)*/
+POST /products (Creates a product item)
+LIST /products (Lists all products in the queue)
+GET /products/:product_id (Gets a specific product item in the queue)
+PUT /products/:product_id (Updates a specific product item in the queue)
+DELETE /products/:product_id (Destroys a specific product item in the queue)*/
 
 /**
  * Module Dependencies

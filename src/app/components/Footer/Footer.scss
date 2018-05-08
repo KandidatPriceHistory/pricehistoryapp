@@ -11,13 +11,12 @@
   text-align: center;
 }
 
-
-
 i{
   padding: 0px 0px 2px 2px;
   font-size: 40px;
   align-items: right;
   color: $pr-black;
+  text-decoration: none;
 }
 
 i.nounderline:link{
@@ -25,6 +24,5 @@ i.nounderline:link{
 }
 
 hr{
-
   border: solid 1px $pr-off-gray;
 }
