@@ -9,9 +9,14 @@
 }
 
 .pictureList{
-  max-height: 40px;
+  max-height: 20px;
   margin-left: 10px;
   margin-top: 10px;
+  @include breakpoint(xs){
+    max-height: 40px;
+    display: inline-block;
+
+  };
 };
 
 .pictureDiv{
@@ -19,14 +24,14 @@
 }
 
 .textStoreAndPrice{
-  display: inline-block;
+  // display: inline-block;
+  
 }
 
 .retailerName{
   padding-top: 10px;
   text-decoration: none; //tar bort linklinen
   color: $pr-black;
-  margin-left: 170px;
   display: inline-block;
 }
 
