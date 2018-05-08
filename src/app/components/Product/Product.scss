@@ -9,19 +9,18 @@
    @include breakpoint(xs){
      height: 300px;
      display: inline-block;
-     float: left;
+     //float: left;
      width: 60%;
 
    };
 
 .descriptionBox{
   height: 70%;
-  width: inherit;
+  //width: inherit;
   margin-top: 15px;
   margin-left: 15px;
   padding-top: 20px;
   padding-left: 20px;
-  //border: solid $pr-off-gray;
   display: inline-block;
   font-family: $body-font;
   position: absolute;
