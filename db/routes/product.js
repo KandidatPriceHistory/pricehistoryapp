@@ -1,3 +1,11 @@
+/*
+CRUD operations:
+POST /todos (Creates a todo item)
+GET /todos (Lists all todos in the queue)
+GET /todos/:product_id (Gets a specific todo item in the queue)
+PUT /todos/:product_id (Updates a specific todo item in the queue)
+DELETE /todos/:product_id (Destroys a specific todo item in the queue)*/
+
 /**
  * Module Dependencies
  */
@@ -6,12 +14,13 @@ const errors = require('restify-errors');
 /**
  * Model Schema
  */
-const Retailer = require('../models/retailer');
+const Product = require('../models/product');
+
 
 	/**
 	 * POST
 	 */
-	server.post('/retailers', (req, res, next) => {
+	server.post('/products', (req, res, next) => {
 		if (!req.is('application/json')) {
 			return next(
 				new errors.InvalidContentError("Expects 'application/json'"),
@@ -20,8 +29,8 @@ const Retailer = require('../models/retailer');
 
 		let data = req.body || {};
 
-		let retailer = new Retailer(data);
-		retailer.save(function(err) {
+		let product = new Product(data);
+		product.save(function(err) {
 			if (err) {
 				console.error(err);
 				return next(new errors.InternalError(err.message));
@@ -36,8 +45,8 @@ const Retailer = require('../models/retailer');
 	/**
 	 * LIST
 	 */
-	server.get('/retailers', (req, res, next) => {
-		Retailer.apiQuery(req.params, function(err, docs) {
+	server.get('/products', (req, res, next) => {
+		Product.apiQuery(req.params, function(err, docs) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -53,8 +62,8 @@ const Retailer = require('../models/retailer');
 	/**
 	 * GET
 	 */
-	server.get('/retailers/:retailer_id', (req, res, next) => {
-		Retailer.findOne({ _id: req.params.retailer_id }, function(err, doc) {
+	server.get('/products/:product_id', (req, res, next) => {
+		Product.findOne({ _id: req.params.product_id }, function(err, doc) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -70,7 +79,7 @@ const Retailer = require('../models/retailer');
 	/**
 	 * UPDATE
 	 */
-	server.put('/retailers/:retailer_id', (req, res, next) => {
+	server.put('/products/:product_id', (req, res, next) => {
 		if (!req.is('application/json')) {
 			return next(
 				new errors.InvalidContentError("Expects 'application/json'"),
@@ -80,10 +89,10 @@ const Retailer = require('../models/retailer');
 		let data = req.body || {};
 
 		if (!data._id) {
-			data = Object.assign({}, data, { _id: req.params.retailer_id });
+			data = Object.assign({}, data, { _id: req.params.product_id });
 		}
 
-		Retailer.findOne({ _id: req.params.product_id }, function(err, doc) {
+		Product.findOne({ _id: req.params.product_id }, function(err, doc) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -97,7 +106,7 @@ const Retailer = require('../models/retailer');
 				);
 			}
 
-			Retailer.update({ _id: data._id }, data, function(err) {
+			Product.update({ _id: data._id }, data, function(err) {
 				if (err) {
 					console.error(err);
 					return next(
@@ -114,8 +123,8 @@ const Retailer = require('../models/retailer');
 	/**
 	 * DELETE
 	 */
-	server.del('/retailers/:retailer_id', (req, res, next) => {
-		Retailer.remove({ _id: req.params.retailer_id }, function(err) {
+	server.del('/products/:product_id', (req, res, next) => {
+		Product.remove({ _id: req.params.product_id }, function(err) {
 			if (err) {
 				console.error(err);
 				return next(

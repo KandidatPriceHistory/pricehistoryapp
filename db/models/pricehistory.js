@@ -5,23 +5,21 @@ const timestamps = require('mongoose-timestamp');
 /* Our `mongoose-timestamp` module will add the createdAt and updatedAt
 timestamps for us, and MongoDB will automatically generate a UUID called _id.
 */
-const RetailerSchema = new mongoose.Schema(
+const PricehistorySchema = new mongoose.Schema(
 	{
-    retailerid: {
+    productid: {
       type: String,
       required: true,
-      trim: true,
     },
-    logo: {
-			type: String,
-			required: true,
-			trim: true,
-		},
-    link: {
+    retailerid: {
 			type: String,
 			required: true,
 		},
-    retailer_name:{
+    price: {
+			type: String,
+			required: true,
+		},
+    date:{
       type: String,
       required: true,
     },
@@ -29,8 +27,8 @@ const RetailerSchema = new mongoose.Schema(
 	{ minimize: false },
 );
 
-RetailerSchema.plugin(timestamps);
-RetailerSchema.plugin(mongooseStringQuery);
+PricehistorySchema.plugin(timestamps);
+PricehistorySchema.plugin(mongooseStringQuery);
 
-const Retailer = mongoose.model('Retailer', RetailerSchema);
-module.exports = Retailer;
+const Pricehistory = mongoose.model('Pricehistory', PricehistorySchema);
+module.exports = Pricehistory;

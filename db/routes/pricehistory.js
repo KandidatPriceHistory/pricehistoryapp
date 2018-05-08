@@ -1,10 +1,10 @@
 /*
 CRUD operations:
-POST /todos (Creates a todo item)
-GET /todos (Lists all todos in the queue)
-GET /todos/:product_id (Gets a specific todo item in the queue)
-PUT /todos/:product_id (Updates a specific todo item in the queue)
-DELETE /todos/:product_id (Destroys a specific todo item in the queue)*/
+POST /pricehistory (Creates a todo item)
+GET /pricehistory (Lists all todos in the queue)
+GET /pricehistory/:pricehistory_id (Gets a specific todo item in the queue)
+PUT /pricehistory/:pricehistory_id (Updates a specific todo item in the queue)
+DELETE /pricehistory/:pricehistory_id (Destroys a specific todo item in the queue)*/
 
 /**
  * Module Dependencies
@@ -14,14 +14,13 @@ const errors = require('restify-errors');
 /**
  * Model Schema
  */
-const Product = require('../models/product');
+const Pricehistory = require('../models/pricehistory');
 
-module.exports = function(server) {
 
 	/**
 	 * POST
 	 */
-	server.post('/products', (req, res, next) => {
+	server.post('/pricehistory', (req, res, next) => {
 		if (!req.is('application/json')) {
 			return next(
 				new errors.InvalidContentError("Expects 'application/json'"),
@@ -30,8 +29,8 @@ module.exports = function(server) {
 
 		let data = req.body || {};
 
-		let product = new Product(data);
-		product.save(function(err) {
+		let pricehistory = new Pricehistory(data);
+		pricehistory.save(function(err) {
 			if (err) {
 				console.error(err);
 				return next(new errors.InternalError(err.message));
@@ -46,8 +45,8 @@ module.exports = function(server) {
 	/**
 	 * LIST
 	 */
-	server.get('/products', (req, res, next) => {
-		Product.apiQuery(req.params, function(err, docs) {
+	server.get('/pricehistory', (req, res, next) => {
+		Pricehistory.apiQuery(req.params, function(err, docs) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -63,8 +62,8 @@ module.exports = function(server) {
 	/**
 	 * GET
 	 */
-	server.get('/products/:product_id', (req, res, next) => {
-		Product.findOne({ _id: req.params.product_id }, function(err, doc) {
+	server.get('/pricehistory/:pricehistory_id', (req, res, next) => {
+		Pricehistory.findOne({ _id: req.params.pricehistory_id }, function(err, doc) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -80,7 +79,7 @@ module.exports = function(server) {
 	/**
 	 * UPDATE
 	 */
-	server.put('/products/:product_id', (req, res, next) => {
+	server.put('/pricehistory/:pricehistory_id', (req, res, next) => {
 		if (!req.is('application/json')) {
 			return next(
 				new errors.InvalidContentError("Expects 'application/json'"),
@@ -90,10 +89,10 @@ module.exports = function(server) {
 		let data = req.body || {};
 
 		if (!data._id) {
-			data = Object.assign({}, data, { _id: req.params.product_id });
+			data = Object.assign({}, data, { _id: req.params.pricehistory_id });
 		}
 
-		Product.findOne({ _id: req.params.product_id }, function(err, doc) {
+		Pricehistory.findOne({ _id: req.params.pricehistory_id }, function(err, doc) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -107,7 +106,7 @@ module.exports = function(server) {
 				);
 			}
 
-			Product.update({ _id: data._id }, data, function(err) {
+			Pricehistory.update({ _id: data._id }, data, function(err) {
 				if (err) {
 					console.error(err);
 					return next(
@@ -124,8 +123,8 @@ module.exports = function(server) {
 	/**
 	 * DELETE
 	 */
-	server.del('/products/:product_id', (req, res, next) => {
-		Product.remove({ _id: req.params.product_id }, function(err) {
+	server.del('/pricehistory/:pricehistory_id', (req, res, next) => {
+		Pricehistory.remove({ _id: req.params.pricehistory_id }, function(err) {
 			if (err) {
 				console.error(err);
 				return next(
@@ -137,4 +136,3 @@ module.exports = function(server) {
 			next();
 		});
 	});
-};
