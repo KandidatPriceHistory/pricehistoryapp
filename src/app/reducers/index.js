@@ -10,7 +10,7 @@ const initialState = {
   retailers: null,
   error: null,
 
-  graph:[
+/*  graph:[
   {"month": 'Nov', "price": 4000},
   {"month": 'Dec', "price": 4000},
   {"month": 'Jan', "price": 5030},
@@ -18,7 +18,7 @@ const initialState = {
   {"month": 'Mar', "price": 1890},
   {"month": 'Apr', "price": 50},
   {"month": 'Maj', "price": 3490}
-],
+],*/
 };
 
 const rootReducer = (state = initialState, action) => {
