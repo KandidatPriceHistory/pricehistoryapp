@@ -21,7 +21,7 @@ export const loadRetailers = id => ({
 export function fetchProduct() {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
-    axios.get("http://localhost:3000/products")
+    axios.get("https://pricehistorybackend.herokuapp.com/products")
       .then((response) => {
         dispatch({
           type: "RECIEVE_PRODUCT",

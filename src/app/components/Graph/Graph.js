@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from "./Graph.scss";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend  } from 'recharts';
-//import { loadGraph } from '../../actions/index';
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
