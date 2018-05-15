@@ -4,19 +4,23 @@
 
 .headerDiv{
   width: 100;
-  height: 150px;
+  height: 70px;
   padding-left: 20px;
   padding-top: 20px;
   background-color: $pr-white;
   font-family: $body-font;
   background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/52/64/595794a060d4976.jpg");
   margin-bottom: 15px;
+  @include breakpoint(xs){
+    height: 150px;
+  }
 
 }
 
 .icon-pr_logo_name{
   font-size: 22px;
   color: $pr-pink;
+  text-align: center;
   @include breakpoint(xs){
     font-size: 25px;
     text-align: left;
