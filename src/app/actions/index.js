@@ -3,7 +3,7 @@ import axios from 'axios';
 export function fetchPriceHistory() {
   return function(dispatch) {
     dispatch({type: "FETCH_PRICE_HISTORY_START"})
-    axios.get("http://localhost:3000/pricehistory")
+    axios.get("https://pricehistorybackend.herokuapp.com/pricehistory")
       .then((response) => {
         dispatch({
           type: "RECIEVE_PRICE_HISTORY",
