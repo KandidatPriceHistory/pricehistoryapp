@@ -1,27 +1,47 @@
-import { LOAD_PRODUCT } from './action-types';
-import { LOAD_GRAPH } from './action-types';
-import { LOAD_RETAILERS } from './action-types';
 import axios from 'axios';
 
-export const loadProduct = id => ({
-  type: LOAD_PRODUCT,
-  id
-});
+export function fetchPriceHistory() {
+  return function(dispatch) {
+    dispatch({type: "FETCH_PRICE_HISTORY_START"})
+    axios.get("http://localhost:3000/pricehistory")
+      .then((response) => {
+        dispatch({
+          type: "RECIEVE_PRICE_HISTORY",
+          payload: response.data
+        })
+      })
+      .catch((err) => {
+        dispatch({
+          type: "FETCH_PRICE_HISTORY_ERROR",
+          payload: err
+        })
+      })
+  }
+}
 
-export const loadGraph = id => ({
-  type: LOAD_GRAPH,
-  id
-});
-
-export const loadRetailers = id => ({
-  type: LOAD_RETAILERS,
-  id
-})
+export function fetchRetailers() {
+  return function(dispatch) {
+    dispatch({type: "FETCH_RETAILERS_START"})
+    axios.get("http://pricehistorybackend.herokuapp.com/retailers")
+      .then((response) => {
+        dispatch({
+          type: "RECIEVE_RETAILERS",
+          payload: response.data
+        })
+      })
+      .catch((err) => {
+        dispatch({
+          type: "FETCH_RETAILERS_ERROR",
+          payload: err
+        })
+      })
+  }
+}
 
 export function fetchProduct() {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
-    axios.get("http://localhost:3000/products")
+    axios.get("https://pricehistorybackend.herokuapp.com/products")
       .then((response) => {
         dispatch({
           type: "RECIEVE_PRODUCT",
@@ -29,7 +49,9 @@ export function fetchProduct() {
         })
       })
       .catch((err) => {
-        dispatch({type: "FETCH_PRODUCT_ERROR", payload: err})
+        dispatch({
+          type: "FETCH_PRODUCT_ERROR",
+          payload: err})
       })
   }
 }
