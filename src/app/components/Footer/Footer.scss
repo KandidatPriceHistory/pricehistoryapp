@@ -11,18 +11,20 @@
   text-align: center;
 }
 
+
+
 i{
   padding: 0px 0px 2px 2px;
   font-size: 40px;
   align-items: right;
   color: $pr-black;
+  display: inline-block;
   text-decoration: none;
 }
 
-i.nounderline:link{
-  text-decoration: none; //tar bort linklinen
-}
+
 
 hr{
+
   border: solid 1px $pr-off-gray;
 }

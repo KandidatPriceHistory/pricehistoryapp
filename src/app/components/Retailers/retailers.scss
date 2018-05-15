@@ -39,7 +39,6 @@
 }
 
 .graphButton {
-  float: right;
   background-color: $pr-blue-dark;
   color: white;
   padding: 6px 15px;
@@ -48,7 +47,8 @@
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border-radius: 20px;
-  display:inline-block;
+  display: inline;
+  float:right;
 }
 
 .graphButton:hover {
