@@ -4,12 +4,13 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend  } from '
 //import { loadGraph } from '../../actions/index';
 import { connect } from "react-redux";
 
+/*
 const mapStateToProps = state => {
   return { graph: state.graph };
 };
+*/
 
-
- class Graph extends React.Component {
+ export default class Graph extends React.Component {
 
    render() {
      console.log(this.props.graph);
@@ -29,4 +30,4 @@ const mapStateToProps = state => {
    }
 }
 
-export default connect(mapStateToProps)(Graph);
+// export default connect(mapStateToProps)(Graph);

@@ -22,12 +22,13 @@ export function fetchPriceHistory() {
 export function fetchRetailers() {
   return function(dispatch) {
     dispatch({type: "FETCH_RETAILERS_START"})
-    axios.get("http://pricehistorybackend.herokuapp.com/retailers")
+    axios.get("http://localhost:3000/retailers")
       .then((response) => {
         dispatch({
           type: "RECIEVE_RETAILERS",
           payload: response.data
         })
+        console.log('retailers:',response.data)
       })
       .catch((err) => {
         dispatch({
@@ -47,6 +48,7 @@ export function fetchProduct() {
           type: "RECIEVE_PRODUCT",
           payload: response.data[0]
         })
+        console.log('in product',response.data)
       })
       .catch((err) => {
         dispatch({

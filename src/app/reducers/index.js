@@ -4,11 +4,13 @@ import { LOAD_RETAILERS } from '../actions/action-types';
 import axios from "axios";
 
 const initialState = {
-  fetching: false,
-  fetched: false,
+  productFetched: false,
+  retailersFetched: false,
+  priceHistoryFetched: false,
   product: null,
-  retailers: null,
+  retailers: [],
   error: null,
+  priceHistoryItem: null,
 
   graph:[
   {"month": 'Nov', "price": 4000},
@@ -23,15 +25,6 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
    switch (action.type) {
-     case LOAD_PRODUCT:
-      return {
-        selectedProduct: state.selectedProduct,
-    }
-       case LOAD_RETAILERS:
-      return {
-        retailers: state.retailers,
-      }
-
       /*{
         products: state.products,
         selectedProduct: state.products.filter(el =>
@@ -42,6 +35,27 @@ const rootReducer = (state = initialState, action) => {
         return {
           graph: state.graph
         }
+      case "FETCH_RETAILERS_START": {
+        return {...state, fetching: true}
+        break;
+      }
+      case "RECIEVE_RETAILERS": {
+        return {
+        ...state,
+          fetching: false,
+          retailersFetched: true,
+          retailers: action.payload,
+        }
+        break;
+      }
+      case "FETCH_RETAILERS_ERROR": {
+        return {
+          ...state,
+          fetching: false,
+          error: action.payload
+        }
+        break;
+      }
 
       case "FETCH_PRODUCT_START": {
         return {...state, fetching: true}
@@ -51,13 +65,41 @@ const rootReducer = (state = initialState, action) => {
         return {
           ...state,
           fetching: false,
-          fetched: true,
+          productFetched: true,
           product: action.payload,
         }
         break;
       }
       case "FETCH_PRODUCT_ERROR": {
-        return {...state, fetching: false, error: action.payload}
+        return {
+          ...state,
+          fetching: false,
+          error: action.payload
+        }
+        break;
+      }
+
+      case "FETCH_PRICE_HISTORY_START": {
+        return {
+          ...state,
+          fetching: true
+        }
+        break;
+      }
+      case "RECIEVE_PRICE_HISTORY": {
+        return {
+          ...state,
+          fetching: false,
+          priceHistoryFetched: true,
+          priceHistoryItem: action.payload,
+        }
+        break;
+      }
+      case "FETCH_PRICE_HISTORY_ERROR": {
+        return {
+          ...state,
+          fetching: false,
+          error: action.payload}
         break;
       }
     default:
