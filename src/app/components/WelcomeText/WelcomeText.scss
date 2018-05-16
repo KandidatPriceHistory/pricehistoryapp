@@ -1,8 +1,27 @@
 @import "../../style/pr-foundation";
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 
-.WelcomeText {
-font-family: $body-font;
-text-align: center;
-font-style: italic;
+
+
+.img {
+  width: 250px;
+  height: 30px;
+  margin: 0 auto;
+  margin-top: 15px;
+  @include breakpoint(xs){
+    width: 400px;
+    height: 100px;
+    margin-top: 30px;
+    margin: 0 auto;
+  }
+
+}
+
+.welcometext {
+  content:url("https://images.pricerunner.com/images/tagline_en.svg");
+  @include breakpoint(xs){
+      margin-top: 30px;
+  }
+
+
 }

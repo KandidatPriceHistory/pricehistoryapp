@@ -4,8 +4,10 @@ import style from './WelcomeText.scss';
 export default class WelcomeText extends React.Component {
   render() {
     return (
-      <div className = "WelcomeText">
+      <div className ="img">
+      <img class = "welcometext"/>
       </div>
+
     );
   }
 }
