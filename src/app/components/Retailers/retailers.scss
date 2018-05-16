@@ -40,7 +40,26 @@
 }
 
 .graphButton {
+  /*text-align: right;
   position: relative;
+  margin-left: 80%;
+  background-color: $pr-blue-dark;
+  color: white;
+  font-size: 14px;
+  font-family: $body-font;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 6px 15px;
+  @include breakpoint(xs){
+    display: inline-block;
+    margin-left: 80%;
+    //position: absolute;
+    //margin-left: 60%;
+  }*/
+  //margin-top: 35px;
+  margin-left: 80%;
   background-color: $pr-blue-dark;
   color: white;
   padding: 6px 15px;
@@ -50,11 +69,7 @@
   transition-duration: 0.4s;
   border-radius: 20px;
   display: inline-block;
-  @include breakpoint(xs){
-    display: inline-block;
-    position: absolute;
-    margin-left: 60%;
-  }
+  margin-right: 10px;
 }
 
 .graphButton:hover {

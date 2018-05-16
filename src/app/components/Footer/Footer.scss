@@ -24,7 +24,6 @@ i{
   display: inline-block;
   text-decoration: none;
   @include breakpoint(xs){
-    text-align: left;
     text-decoration: none;
   }
 }
