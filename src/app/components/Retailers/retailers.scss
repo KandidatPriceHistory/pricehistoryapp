@@ -5,6 +5,7 @@
   background-color: $pr-white;
   height: 100px;
   border-top: 2px solid $pr-off-gray;
+  position: relative;
 }
 
 .pictureList{
@@ -39,6 +40,8 @@
 }
 
 .graphButton {
+  position: absolute;
+  margin-left: 60%;
   background-color: $pr-blue-dark;
   color: white;
   padding: 6px 15px;
@@ -47,7 +50,7 @@
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border-radius: 20px;
-  display: inline;
+  display: inline-block;
   float:right;
 }
 
