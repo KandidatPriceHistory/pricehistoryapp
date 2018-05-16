@@ -10,7 +10,7 @@ const initialState = {
   products: [],
   retailers: [],
   error: null,
-  priceHistoryItem: null,
+  priceHistoryItem: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -58,6 +58,7 @@ const rootReducer = (state = initialState, action) => {
         }
         break;
       }
+
       case "FETCH_PRODUCT_START": {
         return {...state, fetching: true}
         break;

@@ -12,9 +12,9 @@ class Product extends Component {
   }
 
   componentWillMount() {
-    var currentLocation = window.location.pathname.slice(9);
-    this.props.dispatch(fetchProduct(currentLocation));
-    this.props.dispatch(fetchRetailers());
+    var currentProductId = window.location.pathname.slice(9);
+    this.props.dispatch(fetchProduct(currentProductId));
+    this.props.dispatch(fetchRetailers(currentProductId));
   }
 
   render() {
