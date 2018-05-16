@@ -10,7 +10,9 @@ const initialState = {
   product: null,
   retailers: [],
   error: null,
+
   priceHistoryItem: null,
+
 };
 
 const rootReducer = (state = initialState, action) => {
