@@ -53,6 +53,7 @@
 .productItem{
   font-family: $body-font;
   background-color: $pr-white;
+  border-top: solid 2px $pr-off-gray;
   height: 100px;
   position: relative;
 };

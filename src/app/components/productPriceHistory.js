@@ -6,20 +6,20 @@ import { connect } from 'react-redux';
 import reducers from "../reducers/index.js"
 
 import ProductInfoBox from './Product/ProductInfoBox';
-import { fetchProduct } from '../actions/index';
-import { fetchPriceHistory } from '../actions/index';
+import { fetchPriceHistory, fetchProduct } from '../actions/index';
 
 import Factbox from "./Factbox/Factbox";
 
 class productPriceHistory extends Component {
 
   componentWillMount() {
-    this.props.dispatch(fetchProduct());
-    this.props.dispatch(fetchPriceHistory());
-    //console.log('pricehistory:',priceHistory);
+    var currentProductId = window.location.pathname.slice(21,27);
+    var currentRetailerId = window.location.pathname.slice(28);
+    this.props.dispatch(fetchProduct(currentProductId));
+    this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
   }
   render() {
-    if (this.props.productFetched && this.props.priceHistoryFetched){
+    if (this.props.productsFetched && this.props.priceHistoryFetched){
       return (
        <div>
             <Header />
@@ -28,7 +28,6 @@ class productPriceHistory extends Component {
             <Factbox />
             <Footer />
        </div>
-
        )
      }
      else {
@@ -36,15 +35,17 @@ class productPriceHistory extends Component {
          <h2> Laddar ... </h2>
        )
       }
-
     }
 }
 
 const mapStateToProps = state => {
+  console.log('the state',state);
+  console.log('pricehistoryitem:',state.priceHistoryItem);
+  console.log('productfetched:',state.productsFetched);
+  console.log('pricehistoryfetched:',state.priceHistoryFetched);
   return {
-    graph: state.graph,
     product: state.product,
-    productFetched: state.productFetched,
+    productsFetched: state.productsFetched,
     priceHistoryFetched: state.priceHistoryFetched,
     priceHistoryItem: state.priceHistoryItem,
    }

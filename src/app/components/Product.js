@@ -10,10 +10,11 @@ class Product extends Component {
   constructor(props){
     super(props);
   }
-  componentWillMount() {
-    this.props.dispatch(fetchProduct());
-    this.props.dispatch(fetchRetailers());
 
+  componentWillMount() {
+    var currentProductId = window.location.pathname.slice(9);
+    this.props.dispatch(fetchProduct(currentProductId));
+    this.props.dispatch(fetchRetailers(currentProductId));
   }
 
   render() {
@@ -36,8 +37,6 @@ class Product extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('retailers:', state.retailers)
-  console.log('product:',state.product)
   return {
     product: state.product,
     productFetched: state.productFetched,
