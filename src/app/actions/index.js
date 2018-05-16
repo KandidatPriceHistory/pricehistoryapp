@@ -1,13 +1,19 @@
 import axios from 'axios';
 
-export function fetchPriceHistory() {
+export function fetchPriceHistory(prodId, retId) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRICE_HISTORY_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/pricehistory")
       .then((response) => {
+        const findPriceHistory = []
+        response.data.forEach(function(el) {
+          if(el.productid === prodId && el.retailerid === retId){
+            findPriceHistory.push(el);
+          }
+        })
         dispatch({
           type: "RECIEVE_PRICE_HISTORY",
-          payload: response.data
+          payload: findPriceHistory
         })
       })
       .catch((err) => {
@@ -19,16 +25,23 @@ export function fetchPriceHistory() {
   }
 }
 
-export function fetchRetailers() {
+export function fetchRetailers(productId) {
   return function(dispatch) {
     dispatch({type: "FETCH_RETAILERS_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/retailers")
       .then((response) => {
+        const findRetailers = []
+        response.data.map(retailer => {
+          retailer.retailersProducts.map(el => {
+              if (el.productid === productId){
+                findRetailers.push(retailer)
+              }
+          })
+        })
         dispatch({
           type: "RECIEVE_RETAILERS",
-          payload: response.data
+          payload: findRetailers
         })
-        console.log('retailers:',response.data)
       })
       .catch((err) => {
         dispatch({
@@ -39,17 +52,41 @@ export function fetchRetailers() {
   }
 }
 
-export function fetchProduct() {
+export function fetchProducts() {
+  return function(dispatch) {
+    dispatch({type: "FETCH_PRODUCTS_START"})
+    axios.get("https://pricehistorybackend.herokuapp.com/products")
+      .then((response) => {
+        console.log('in the action');
+        console.log('all the products:',response.data);
+        dispatch({
+          type: "RECIEVE_PRODUCTS",
+          payload: response.data
+        })
+      })
+      .catch((err) => {
+        dispatch({
+          type: "FETCH_PRODUCTS_ERROR",
+          payload: err})
+      })
+  }
+}
+
+export function fetchProduct(id) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/products")
+
       .then((response) => {
+        var findProduct = response.data.find(function(el) {
+          return el.id === id;
+        })
         dispatch({
           type: "RECIEVE_PRODUCT",
-          payload: response.data[0]
+          payload: findProduct
         })
-        console.log('in product',response.data)
       })
+
       .catch((err) => {
         dispatch({
           type: "FETCH_PRODUCT_ERROR",

@@ -4,7 +4,6 @@ import RetailerItem from './RetailerItem';
 
 export default class RetailerList extends React.Component {
   render() {
-    console.log('render retailer',this.props.retailers)
     return (
       <div className = "retailerList" >
         { this.props.retailers.map(el => (
