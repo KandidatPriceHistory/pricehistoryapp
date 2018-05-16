@@ -3,7 +3,7 @@ import axios from 'axios';
 export function fetchPriceHistory() {
   return function(dispatch) {
     dispatch({type: "FETCH_PRICE_HISTORY_START"})
-    axios.get("http://pricehistorybackend.herokuapp.com/products")
+    axios.get("https://pricehistorybackend.herokuapp.com/pricehistory")
       .then((response) => {
         dispatch({
           type: "RECIEVE_PRICE_HISTORY",
@@ -22,7 +22,7 @@ export function fetchPriceHistory() {
 export function fetchRetailers() {
   return function(dispatch) {
     dispatch({type: "FETCH_RETAILERS_START"})
-    axios.get("http://pricehistorybackend.herokuapp.com/products")
+    axios.get("https://pricehistorybackend.herokuapp.com/retailers")
       .then((response) => {
         dispatch({
           type: "RECIEVE_RETAILERS",
@@ -42,7 +42,7 @@ export function fetchRetailers() {
 export function fetchProduct() {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
-    axios.get("http://pricehistorybackend.herokuapp.com/products")
+    axios.get("https://pricehistorybackend.herokuapp.com/products")
       .then((response) => {
         dispatch({
           type: "RECIEVE_PRODUCT",
