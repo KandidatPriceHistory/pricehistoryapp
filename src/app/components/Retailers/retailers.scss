@@ -40,7 +40,7 @@
 }
 
 .graphButton {
-  /*text-align: right;
+  align-content: right;
   position: relative;
   margin-left: 80%;
   background-color: $pr-blue-dark;
@@ -55,11 +55,13 @@
   @include breakpoint(xs){
     display: inline-block;
     margin-left: 80%;
+
     //position: absolute;
     //margin-left: 60%;
-  }*/
+  }
   //margin-top: 35px;
-  margin-left: 80%;
+
+  /*margin-left: 80%;
   background-color: $pr-blue-dark;
   color: white;
   padding: 6px 15px;
@@ -69,7 +71,7 @@
   transition-duration: 0.4s;
   border-radius: 20px;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 10px;*/
 }
 
 .graphButton:hover {
