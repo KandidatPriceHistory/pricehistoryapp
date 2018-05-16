@@ -4,9 +4,10 @@ import style from './WelcomeText.scss';
 export default class WelcomeText extends React.Component {
   render() {
     return (
-      <div className = "WelcomeText">
-        <p> Welcome to our pricehistory application ! </p>
+      <div className ="img">
+      <img class = "welcometext"/>
       </div>
+
     );
   }
 }

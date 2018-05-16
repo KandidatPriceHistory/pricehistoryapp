@@ -4,12 +4,29 @@
 
 .headerDiv{
   width: 100;
-  height: 70px;
+  height: 50px;
   padding-left: 20px;
   padding-top: 20px;
-  background-color: $pr-white;
+  background-color: #0c3133;
   font-family: $body-font;
-  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/52/64/595794a060d4976.jpg");
+  background-size: 400px;
+  background-image: url("https://images.pricerunner.com/images/site-gui/startsida/bg-start.png");
+  margin-bottom: 15px;
+  @include breakpoint(xs){
+    height: 50px;
+  }
+
+}
+
+.headerHomePageDiv{
+  width: 100;
+  height: 100px;
+  padding-left: 20px;
+  padding-top: 20px;
+  background-color: #0c3133;
+  font-family: $body-font;
+  background-size: 400px;
+  background-image: url("https://images.pricerunner.com/images/site-gui/startsida/bg-start.png");
   margin-bottom: 15px;
   @include breakpoint(xs){
     height: 150px;
@@ -19,8 +36,7 @@
 
 .icon-pr_logo_name{
   font-size: 22px;
-  color: $pr-pink;
-  text-align: center;
+  color: $pr-white;
   @include breakpoint(xs){
     font-size: 25px;
     text-align: left;
@@ -29,7 +45,7 @@
 
 .history{
   font-size: 15px;
-  color: $pr-pink;
+  color: $pr-white;
   @include breakpoint(xs){
     font-size: 22px;
   };

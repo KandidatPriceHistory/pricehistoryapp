@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Header from './Header/Header';
-import WelcomeText from './WelcomeText/WelcomeText';
+import HeaderHomePage from './Header/HeaderHomePage';
 import ProductList from './Product/ProductList';
 import Footer from './Footer/Footer';
 import { connect } from 'react-redux';
@@ -15,8 +14,7 @@ class Home extends Component {
      if (this.props.productFetched){
       return (
          <div>
-              <Header />
-              <WelcomeText />
+              <HeaderHomePage />
               <ProductList product={this.props.product} />
               <Footer />
          </div>
