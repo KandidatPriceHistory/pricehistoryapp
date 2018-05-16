@@ -18,7 +18,7 @@ class Product extends Component {
   }
 
   render() {
-     if (this.props.productsFetched && this.props.retailersFetched){
+     if (this.props.productFetched && this.props.retailersFetched){
        return (
         <div>
              <Header />
@@ -39,7 +39,7 @@ class Product extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     product: state.product,
-    productsFetched: state.productsFetched,
+    productFetched: state.productFetched,
     retailersFetched: state.retailersFetched,
     retailers: state.retailers,
     }

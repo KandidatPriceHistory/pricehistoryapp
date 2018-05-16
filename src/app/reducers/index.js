@@ -1,10 +1,8 @@
-// import { LOAD_PRODUCTS } from '../actions/action-types';
-// import { LOAD_GRAPH } from '../actions/action-types';
-// import { LOAD_RETAILERS } from '../actions/action-types';
 import axios from "axios";
 
 const initialState = {
   productsFetched: false,
+  productFetched: false,
   retailersFetched: false,
   priceHistoryFetched: false,
   products: [],
@@ -67,7 +65,7 @@ const rootReducer = (state = initialState, action) => {
         return {
           ...state,
           fetching: false,
-          productsFetched: true,
+          productFetched: true,
           product: action.payload,
         }
         break;
