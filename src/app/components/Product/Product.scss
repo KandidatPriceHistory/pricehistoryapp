@@ -7,7 +7,7 @@
    display: inline-block;
    margin-bottom: 15px;
    @include breakpoint(xs){
-     height: 260px;
+     height: 280px;
      display: inline-block;
      //float: left;
      width: 60%;
@@ -49,13 +49,16 @@
      };
    }
 }
-//HÄR BÖRJAR HOMEPAGE scssEN
 
 .productItem{
   font-family: $body-font;
   background-color: $pr-white;
   height: 100px;
   position: relative;
+};
+
+.productInfoText{
+  display: block;
 };
 
 #pictureList{
@@ -110,5 +113,4 @@
   background-color: white;
   border: 2px solid $pr-blue-dark;
   color: black;
-
 }

@@ -5,7 +5,7 @@
   font-family: $body-font;
   background-color:$pr-darkgray;
   width: 100;
-  height: 100;
+  height: 160px;
   margin-bottom: 15px;
   @include breakpoint(xs){
     background-color: $pr-darkgray;
@@ -18,8 +18,7 @@
 }
 
 .factsHeadline{
-  //margin-bottom: 15px;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 20px;
 }
 
