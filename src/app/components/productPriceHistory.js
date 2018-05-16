@@ -7,6 +7,7 @@ import reducers from "../reducers/index.js"
 
 import ProductInfoBox from './Product/ProductInfoBox';
 import { fetchProduct } from '../actions/index';
+import { fetchPriceHistory } from '../actions/index';
 
 import Factbox from "./Factbox/Factbox";
 
@@ -14,14 +15,16 @@ class productPriceHistory extends Component {
 
   componentWillMount() {
     this.props.dispatch(fetchProduct());
+    this.props.dispatch(fetchPriceHistory());
+    //console.log('pricehistory:',priceHistory);
   }
   render() {
-    if (this.props.fetched){
+    if (this.props.productFetched && this.props.priceHistoryFetched){
       return (
        <div>
             <Header />
             <ProductInfoBox product={this.props.product}/>
-            <Graph />
+            <Graph graph={this.props.priceHistoryItem}/>
             <Factbox />
             <Footer />
        </div>
@@ -41,8 +44,9 @@ const mapStateToProps = state => {
   return {
     graph: state.graph,
     product: state.product,
-    fetching: state.fetching,
-    fetched: state.fetched,
+    productFetched: state.productFetched,
+    priceHistoryFetched: state.priceHistoryFetched,
+    priceHistoryItem: state.priceHistoryItem,
    }
 }
 

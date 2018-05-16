@@ -4,10 +4,11 @@ import RetailerItem from './RetailerItem';
 
 export default class RetailerList extends React.Component {
   render() {
+    console.log('render retailer',this.props.retailers)
     return (
       <div className = "retailerList" >
-        { this.props.product.offers.map(el => (
-          <RetailerItem retailer={el}/>
+        { this.props.retailers.map(el => (
+          <RetailerItem retailer={el} product={this.props.product}/>
         ))}
       </div>
     )

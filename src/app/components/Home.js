@@ -12,7 +12,7 @@ class Home extends Component {
     this.props.dispatch(fetchProduct());
   }
    render() {
-     if (this.props.fetched){
+     if (this.props.productFetched){
       return (
          <div>
               <Header />
@@ -33,7 +33,7 @@ const mapStateToProps = (state) => {
   return {
     product: state.product,
     fetching: state.fetching,
-    fetched: state.fetched,
+    productFetched: state.productFetched,
   }
 }
 

@@ -14,7 +14,7 @@ export default class AppComponent extends Component {
          <div>
             <Route exact path="/product/:id" component={Product} />
             <Route exact path="/" component={Home} />
-            <Route exact path="/productpricehistory" component={productPriceHistory} />
+            <Route exact path="/productpricehistory/:productid/:retailerid" component={productPriceHistory} />
             <Route exact path="/wrong" component={wrongPath} />
          </div>
       );
