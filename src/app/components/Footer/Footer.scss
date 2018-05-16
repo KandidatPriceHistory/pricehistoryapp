@@ -1,6 +1,6 @@
 @import "../../style/pr-foundation";
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
-@import "../../style/_mixins.scss";
+
 
 
 .footerDiv{
@@ -9,6 +9,9 @@
   background-color: $pr-white-20;
   font-family: $body-font;
   text-align: center;
+  @include breakpoint(xs){
+    text-align: center;
+  }
 }
 
 
@@ -18,13 +21,15 @@ i{
   font-size: 40px;
   align-items: right;
   color: $pr-black;
+  display: inline-block;
+  text-decoration: none;
+  @include breakpoint(xs){
+    text-decoration: none;
+  }
 }
 
-i.nounderline:link{
-  text-decoration: none; //tar bort linklinen
-}
+
 
 hr{
-
   border: solid 1px $pr-off-gray;
 }
