@@ -6,12 +6,11 @@ export default class productList extends React.Component {
   render() {
     return (
       <div className = "listProducts" >
-        <ProductItem product={this.props.product} />
-        {/*
-        LATER:
+        {/*<ProductItem product={this.props.product} />*/}
+
         { this.props.products.map(el => (
           <ProductItem product={el}/>
-        ))}*/}
+        ))}
       </div>
     )
   }

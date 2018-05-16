@@ -39,17 +39,41 @@ export function fetchRetailers() {
   }
 }
 
-export function fetchProduct() {
+export function fetchProducts() {
   return function(dispatch) {
-    dispatch({type: "FETCH_PRODUCT_START"})
+    dispatch({type: "FETCH_PRODUCTS_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/products")
       .then((response) => {
         dispatch({
-          type: "RECIEVE_PRODUCT",
-          payload: response.data[0]
+          type: "RECIEVE_PRODUCTS",
+          payload: response.data
         })
         console.log('in product',response.data)
       })
+      .catch((err) => {
+        dispatch({
+          type: "FETCH_PRODUCTS_ERROR",
+          payload: err})
+      })
+  }
+}
+
+export function fetchProduct(id) {
+  return function(dispatch) {
+    dispatch({type: "FETCH_PRODUCT_START"})
+    axios.get("https://pricehistorybackend.herokuapp.com/products")
+
+      .then((response) => {
+        var findProduct = response.data.find(function(el) {
+          return el.id === id;
+        })
+        dispatch({
+          type: "RECIEVE_PRODUCT",
+          payload: findProduct
+        })
+        console.log('in product',findProduct)
+      })
+
       .catch((err) => {
         dispatch({
           type: "FETCH_PRODUCT_ERROR",
