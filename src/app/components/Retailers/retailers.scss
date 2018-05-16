@@ -40,8 +40,7 @@
 }
 
 .graphButton {
-  position: absolute;
-  margin-left: 60%;
+  position: relative;
   background-color: $pr-blue-dark;
   color: white;
   padding: 6px 15px;
@@ -51,7 +50,13 @@
   transition-duration: 0.4s;
   border-radius: 20px;
   display: inline-block;
-  float:right;
+  @include breakpoint(xs){
+    display: inline-block;
+    position: absolute;
+    margin-left: 60%;
+
+
+  }
 }
 
 .graphButton:hover {
