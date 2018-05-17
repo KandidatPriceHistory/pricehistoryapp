@@ -6,7 +6,7 @@ export default class Header extends React.Component {
    render() {
       return (
         <div className = "headerDiv">
-          <Link to ="/" className="linkTo">
+          <Link to ="/" className="linkToHome">
             <i className= {`icon-pr_logo_name`} />
             <span className="history">
                 history
