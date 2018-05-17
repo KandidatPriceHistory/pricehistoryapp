@@ -29,7 +29,6 @@ export default class Retailer extends React.Component {
         <div className="textStoreAndPrice">
           <h3 className = "retailerName">{this.props.retailer.retailerName}</h3>
           <p key={this.props.retailer.retailerid} className="currentPrice">
-            {/*Current price: {this.props.retailer.price} {this.props.retailer.currency}*/}
           </p>
         </div>
         <Link to ={`/productpricehistory/${this.props.product.id}/${this.props.retailer.retailerid}`} className="linkTo">

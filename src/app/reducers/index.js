@@ -1,18 +1,14 @@
-import { LOAD_PRODUCT } from '../actions/action-types';
-import { LOAD_GRAPH } from '../actions/action-types';
-import { LOAD_RETAILERS } from '../actions/action-types';
 import axios from "axios";
 
 const initialState = {
+  productsFetched: false,
   productFetched: false,
   retailersFetched: false,
   priceHistoryFetched: false,
-  product: null,
+  products: [],
   retailers: [],
   error: null,
-
-  priceHistoryItem: null,
-
+  priceHistoryItem: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -31,6 +27,28 @@ const rootReducer = (state = initialState, action) => {
         break;
       }
       case "FETCH_RETAILERS_ERROR": {
+        return {
+          ...state,
+          fetching: false,
+          error: action.payload
+        }
+        break;
+      }
+
+      case "FETCH_PRODUCTS_START": {
+        return {...state, fetching: true}
+        break;
+      }
+      case "RECIEVE_PRODUCTS": {
+        return {
+          ...state,
+          fetching: false,
+          productsFetched: true,
+          products: action.payload,
+        }
+        break;
+      }
+      case "FETCH_PRODUCTS_ERROR": {
         return {
           ...state,
           fetching: false,

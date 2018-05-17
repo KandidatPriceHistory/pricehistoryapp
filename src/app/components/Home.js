@@ -3,19 +3,20 @@ import HeaderHomePage from './Header/HeaderHomePage';
 import ProductList from './Product/ProductList';
 import Footer from './Footer/Footer';
 import { connect } from 'react-redux';
-import { fetchProduct } from '../actions/index';
+import { fetchProducts } from '../actions/index';
 
 
 class Home extends Component {
   componentWillMount() {
-    this.props.dispatch(fetchProduct());
+    this.props.dispatch(fetchProducts());
   }
    render() {
-     if (this.props.productFetched){
+     if (this.props.productsFetched){
+       console.log('in the render fucntion',this.props.products);
       return (
          <div>
               <HeaderHomePage />
-              <ProductList product={this.props.product} />
+              <ProductList products={this.props.products} />
               <Footer />
          </div>
       )
@@ -28,10 +29,11 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log('in mapstatetoprops', state.products)
   return {
-    product: state.product,
+    products: state.products,
     fetching: state.fetching,
-    productFetched: state.productFetched,
+    productsFetched: state.productsFetched,
   }
 }
 

@@ -14,7 +14,7 @@ const Product = ({ product }) => (
         <p> Current price from {product.minPrice.value} to {product.maxPrice.value} {product.minPrice.currency}</p>
       </div>
 
-      <Link to = {`/product/${product.id}`} >
+      <Link to = {`/product/${product.id}`}>
         <button type="button" className="goToRetailersButton"> Go to retailers </button>
       </Link>
     </div>
