@@ -38,9 +38,11 @@
   font-size: 22px;
   color: $pr-white;
   align-content: center;
+  text-decoration: none;
   @include breakpoint(xs){
     font-size: 25px;
     text-align: left;
+    text-decoration: none;
   }
 }
 
