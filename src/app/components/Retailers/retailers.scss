@@ -50,11 +50,12 @@
 .graphButton {
   background-color: $pr-action;
    color: white;
-   padding: 6px 1px;
-   font-size: 14px;
+   padding: 1px 1px;
+   font-size: 1px;
    color: white;
    font-family: $body-font;
    margin: auto;
+   visibility: hidden;
   @include breakpoint(xs){
     padding: 6px 15px;
     font-size: 14px;
@@ -64,7 +65,7 @@
     border: 1px #165660;
     display: inline-block;
     margin-right: 10px;
-
+    visibility: visible;
   }
 
 }
@@ -73,4 +74,20 @@
   background-color: white;
   border: 2px solid $pr-action;
   color: black;
+}
+
+.mobilebutton {
+  border: solid #165660;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  font-style: normal;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  visibility: visible;
+   transform: rotate(-45deg);
+  @include breakpoint(xs){
+    visibility: hidden;
+  }
 }
