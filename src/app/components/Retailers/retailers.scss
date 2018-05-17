@@ -78,13 +78,10 @@
 
 .mobilebutton {
   border: solid #165660;
-  border-width: 0 3px 3px 0;
   display: inline-block;
-  padding: 10px;
   font-style: normal;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
+  border-width: 0 2px 2px 0;
+  padding: 6.5px;
   visibility: visible;
    transform: rotate(-45deg);
   @include breakpoint(xs){
