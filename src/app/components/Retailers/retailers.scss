@@ -36,26 +36,24 @@
 }
 
 .linkTo{
+  margin-right: 30px;
   float: right;
-  margin-right: 100px;
-  margin-top: 30px;
+  margin-top: 27px;
+  @include breakpoint(xs){
+    margin-right: 100px;
+    margin-top: 30px;
+  }
+
 
 }
 
 .graphButton {
-  align-content: right;
-  position: relative;
-  margin-left: 80%;
   background-color: $pr-action;
-  color: white;
-  font-size: 14px;
-  font-family: $body-font;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  border-radius: 4px;
-  border: 1px #165660;
-  display: inline-block;
-  padding: 6px 15px;
+   color: white;
+   padding: 6px 15px;
+   font-size: 14px;
+   color: white;
+   font-family: $body-font;
   @include breakpoint(xs){
     padding: 6px 15px;
     font-size: 14px;
@@ -64,24 +62,10 @@
     border-radius: 4px;
     border: 1px #165660;
     display: inline-block;
-    margin-left: 80%;
+    margin-right: 10px;
 
-    //position: absolute;
-    //margin-left: 60%;
   }
-  //margin-top: 35px;
 
-  /*margin-left: 80%;
-  background-color: $pr-blue-dark;
-  color: white;
-  padding: 6px 15px;
-  font-size: 14px;
-  font-family: $body-font;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  border-radius: 20px;
-  display: inline-block;
-  margin-right: 10px;*/
 }
 
 .graphButton:hover {
