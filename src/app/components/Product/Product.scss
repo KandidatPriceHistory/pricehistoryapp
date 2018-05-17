@@ -96,14 +96,15 @@
 .goToRetailersButton {
   //margin-top: 35px;
   margin-left: 80%;
-  background-color: $pr-blue-dark;
+  background-color: $pr-action;
   color: white;
   padding: 6px 15px;
   font-size: 14px;
   font-family: $body-font;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  border-radius: 20px;
+  border-radius: 4px;
+  border: 1px #165660;
   display: inline-block;
 }
 

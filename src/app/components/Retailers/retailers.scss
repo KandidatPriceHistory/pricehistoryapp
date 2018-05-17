@@ -36,9 +36,14 @@
 }
 
 .linkTo{
+  margin-right: 30px;
   float: right;
-  margin-right: 100px;
-  margin-top: 30px;
+  margin-top: 27px;
+  @include breakpoint(xs){
+    margin-right: 100px;
+    margin-top: 30px;
+  }
+
 
 }
 
