@@ -57,8 +57,6 @@ export function fetchProducts() {
     dispatch({type: "FETCH_PRODUCTS_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/products")
       .then((response) => {
-        console.log('in the action');
-        console.log('all the products:',response.data);
         dispatch({
           type: "RECIEVE_PRODUCTS",
           payload: response.data

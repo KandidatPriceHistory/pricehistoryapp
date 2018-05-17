@@ -39,10 +39,6 @@ class productPriceHistory extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('the state',state);
-  console.log('pricehistoryitem:',state.priceHistoryItem);
-  console.log('productfetched:',state.productsFetched);
-  console.log('pricehistoryfetched:',state.priceHistoryFetched);
   return {
     product: state.product,
     productsFetched: state.productsFetched,
