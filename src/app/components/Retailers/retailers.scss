@@ -38,7 +38,7 @@
 .linkTo{
   margin-right: 30px;
   float: right;
-  margin-top: 17px;
+  margin-top: 10px;
 
   @include breakpoint(xs){
     margin-right: 100px;
@@ -51,10 +51,11 @@
 .graphButton {
   background-color: $pr-action;
    color: white;
-   padding: 6px 15px;
-   font-size: 14px;
-   color: white;
+   padding: 1px 1px;
+   font-size: 1px;
    font-family: $body-font;
+   margin: auto;
+   visibility: hidden;
 
   @include breakpoint(xs){
     padding: 6px 15px;
@@ -65,7 +66,7 @@
     border: 1px #165660;
     display: inline-block;
     margin-right: 10px;
-
+    visibility: visible;
   }
 
 }
@@ -74,4 +75,17 @@
   background-color: white;
   border: 2px solid $pr-action;
   color: black;
+}
+
+.mobilebutton {
+  border: solid #165660;
+  display: inline-block;
+  font-style: normal;
+  border-width: 0 2px 2px 0;
+  padding: 6.5px;
+  visibility: visible;
+  transform: rotate(-45deg);
+  @include breakpoint(xs){
+    visibility: hidden;
+  }
 }
