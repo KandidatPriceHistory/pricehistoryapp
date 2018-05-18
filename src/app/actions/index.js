@@ -76,11 +76,9 @@ export function fetchProduct(id) {
     axios.get("https://pricehistorybackend.herokuapp.com/products")
 
       .then((response) => {
-        console.log('the response, product:',response.data);
         const findProduct = response.data.find(function(el) {
           return el.id === id
         })
-        console.log('product found:',findProduct);
         dispatch({
           type: "RECIEVE_PRODUCT",
           payload: findProduct

@@ -15,7 +15,6 @@ class productPriceHistory extends Component {
   componentWillMount() {
     var currentProductId = window.location.pathname.slice(21,30);
     var currentRetailerId = window.location.pathname.slice(31);
-    console.log('the current prod id:',currentProductId, 'the retailer id:',currentRetailerId);
     this.props.dispatch(fetchProduct(currentProductId));
     this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
   }
