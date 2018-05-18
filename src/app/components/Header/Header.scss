@@ -49,6 +49,7 @@
 .history{
   font-size: 15px;
   color: $pr-white;
+  text-decoration: none;
   @include breakpoint(xs){
     font-size: 22px;
   };
