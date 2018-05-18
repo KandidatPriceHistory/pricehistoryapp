@@ -1,31 +1,27 @@
 @import "../../style/pr-foundation";
 //Product scss
 .productInfoBox{
-   height: 200px;
+   height: 260px;
    width: 100%;
    position: relative;
    display: inline-block;
    margin-bottom: 15px;
    @include breakpoint(xs){
-     height: 300px;
-     display: inline-block;
-     //float: left;
+     height: 280px;
      width: 60%;
 
    };
 
 .descriptionBox{
   height: 70%;
-  //width: inherit;
-  margin-top: 15px;
   margin-left: 15px;
-  padding-top: 20px;
   padding-left: 20px;
   display: inline-block;
   font-family: $body-font;
   position: absolute;
   @include breakpoint(xs){
-    display: inline-block;
+    padding-top: 20px;
+    margin-top: 15px;
   }
 };
 
@@ -45,12 +41,10 @@
      padding-top: 10px;
      margin-left: 140px;
      @include breakpoint(xs){
-        margin-left: 230px;
+        margin-left: 190px;
      };
    }
 }
-
-//HÄR BÖRJAR HOMEPAGE scssEN
 
 .productItem{
   font-family: $body-font;
@@ -58,6 +52,14 @@
   border-top: solid 2px $pr-off-gray;
   height: 100px;
   position: relative;
+};
+
+.productInfoText{
+  display: block;
+  font-size: .85714rem;
+  @include breakpoint(xs){
+  font-size: .92857rem;
+  }
 };
 
 #pictureList{
@@ -95,22 +97,37 @@
 };
 
 .goToRetailersButton {
-  //margin-top: 35px;
+  visibility: hidden;
+  padding: 0px 0px;
+  font-size: 0px;
+  @include breakpoint(xs) {
   margin-left: 80%;
-  background-color: $pr-blue-dark;
+  background-color: $pr-action;
   color: white;
   padding: 6px 15px;
   font-size: 14px;
   font-family: $body-font;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  border-radius: 20px;
+  border-radius: 4px;
+  border: 1px #165660;
   display: inline-block;
+  visibility: visible;
+  }
 }
 
 .goToRetailersButton:hover {
   background-color: white;
-  border: 2px solid $pr-blue-dark;
+  border: 2px solid $pr-action;
   color: black;
+}
 
+.mobilebutton {
+  padding: 10px;
+  visibility: visible;
+  transform: rotate(-45deg);
+  margin-left: 90%;
+  @include breakpoint(xs){
+    visibility: hidden;
+  }
 }

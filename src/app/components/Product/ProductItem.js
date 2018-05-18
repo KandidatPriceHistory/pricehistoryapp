@@ -12,6 +12,7 @@ const Product = ({ product }) => (
       </div>
 
       <Link to = {`/product/${product.id}`}>
+        <i class="mobilebutton"></i>
         <button type="button" className="goToRetailersButton"> Go to retailers </button>
       </Link>
     </div>

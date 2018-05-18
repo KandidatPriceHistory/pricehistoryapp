@@ -8,6 +8,8 @@
   height: 100;
   display: block;
   margin-bottom: 15px;
+  float: none;
+  display: inline-block;
   @include breakpoint(xs){
     width: 40%;
     height: 300px;
@@ -17,15 +19,17 @@
 }
 
 .theGraph{
-  border: 1px;
-  border-color: $pr-darkgray;
-  width:100;
-  height: 100;
+  margin-top: 50px;
+  float:left;
+  display: inline-block;
+  width: auto;
+  height: auto;
   @include breakpoint(xs){
-    width: 50%;
-    height: 100%;
-    padding-top: 50px;
+    width: 200%;
+    height: 200%;
+    padding-top: 30px;
     margin: auto;
+    margin-bottom: 30px;
 
   }
 }
