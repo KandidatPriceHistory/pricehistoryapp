@@ -39,6 +39,7 @@
   margin-right: 30px;
   float: right;
   margin-top: 10px;
+
   @include breakpoint(xs){
     margin-right: 100px;
     margin-top: 30px;
@@ -52,10 +53,10 @@
    color: white;
    padding: 1px 1px;
    font-size: 1px;
-   color: white;
    font-family: $body-font;
    margin: auto;
    visibility: hidden;
+
   @include breakpoint(xs){
     padding: 6px 15px;
     font-size: 14px;
@@ -83,7 +84,7 @@
   border-width: 0 2px 2px 0;
   padding: 6.5px;
   visibility: visible;
-   transform: rotate(-45deg);
+  transform: rotate(-45deg);
   @include breakpoint(xs){
     visibility: hidden;
   }
