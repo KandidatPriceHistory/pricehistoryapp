@@ -13,7 +13,8 @@ import { connect } from "react-redux";
    };
 
    render(graphDates) {
-     //console.log("INSIDE RENDER",graphDates);
+     console.log("INSIDE RENDER",graphDates);
+     /*
       return (
         <div className = "graphDiv">
         <LineChart className = "theGraph" width={500} height={250} data={graphDates}>
@@ -25,8 +26,10 @@ import { connect } from "react-redux";
             </LineChart>
         </div>
       );
+      */
    }
 }
+
 
 function sortGraphDates(graphDates){
   console.log("INSIDE SORT FUNCTION");
