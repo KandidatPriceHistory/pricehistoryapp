@@ -11,7 +11,6 @@ export default class ProductInfoBox extends React.Component {
             <div className="descriptionBox">
               <p className="productInfoText"> Manufacturer: {currentProduct.manufacturer.name} </p>
               <p className="productInfoText"> {currentProduct.description} </p>
-              {/*<p className="productInfoText"> Lowest price: {currentProduct.minPrice.value} {currentProduct.minPrice.currency} </p>*/}
             </div>
         </div>
      );
