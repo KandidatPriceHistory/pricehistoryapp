@@ -13,13 +13,13 @@ import Factbox from "./Factbox/Factbox";
 class productPriceHistory extends Component {
 
   componentWillMount() {
-    var currentProductId = window.location.pathname.slice(21,27);
-    var currentRetailerId = window.location.pathname.slice(28);
+    var currentProductId = window.location.pathname.slice(21,30);
+    var currentRetailerId = window.location.pathname.slice(31);
     this.props.dispatch(fetchProduct(currentProductId));
     this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
   }
   render() {
-    if (this.props.productsFetched && this.props.priceHistoryFetched){
+    if (this.props.productFetched && this.props.priceHistoryFetched){
       return (
        <div>
             <Header />
@@ -41,7 +41,7 @@ class productPriceHistory extends Component {
 const mapStateToProps = state => {
   return {
     product: state.product,
-    productsFetched: state.productsFetched,
+    productFetched: state.productFetched,
     priceHistoryFetched: state.priceHistoryFetched,
     priceHistoryItem: state.priceHistoryItem,
    }
