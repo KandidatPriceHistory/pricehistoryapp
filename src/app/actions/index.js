@@ -3,7 +3,7 @@ import axios from 'axios';
 export function fetchPriceHistory(prodId, retId) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRICE_HISTORY_START"})
-    axios.get("https://pricehistorybackend.herokuapp.com/pricehistory")
+    axios.get("https://pricehistorybackend.herokuapp.com/pricehistoryitem")
       .then((response) => {
         const findPriceHistory = []
         response.data.forEach(function(el) {
@@ -57,8 +57,7 @@ export function fetchProducts() {
     dispatch({type: "FETCH_PRODUCTS_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/products")
       .then((response) => {
-        console.log('in the action');
-        console.log('all the products:',response.data);
+        console.log('the response:',response);
         dispatch({
           type: "RECIEVE_PRODUCTS",
           payload: response.data

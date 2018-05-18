@@ -12,7 +12,6 @@ class Home extends Component {
   }
    render() {
      if (this.props.productsFetched){
-       console.log('in the render fucntion',this.props.products);
       return (
          <div>
               <HeaderHomePage />
@@ -29,7 +28,6 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('in mapstatetoprops', state.products)
   return {
     products: state.products,
     fetching: state.fetching,

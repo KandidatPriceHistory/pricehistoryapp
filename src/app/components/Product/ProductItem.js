@@ -10,11 +10,9 @@ const Product = ({ product }) => (
       <div className= "productnameDiv">
         <h3 id="productName"> {product.name} </h3>
       </div>
-      <div id="descriptionHome">
-        <p> Current price from {product.minPrice.value} to {product.maxPrice.value} {product.minPrice.currency}</p>
-      </div>
 
       <Link to = {`/product/${product.id}`}>
+        <i class="mobilebutton"></i>
         <button type="button" className="goToRetailersButton"> Go to retailers </button>
       </Link>
     </div>
