@@ -7,7 +7,7 @@ import { connect } from "react-redux";
  export default class Graph extends React.Component {
 
    render() {
-     console.log(this.props.graph);
+     // sortDates(this.props.graph)
       return (
         <div className = "graphDiv">
 
@@ -23,5 +23,3 @@ import { connect } from "react-redux";
       );
    }
 }
-
-// export default connect(mapStateToProps)(Graph);
