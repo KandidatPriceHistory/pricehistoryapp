@@ -123,9 +123,6 @@
 }
 
 .mobilebutton {
-  padding: 10px;
-  visibility: visible;
-  transform: rotate(-45deg);
   margin-left: 90%;
   @include breakpoint(xs){
     visibility: hidden;
