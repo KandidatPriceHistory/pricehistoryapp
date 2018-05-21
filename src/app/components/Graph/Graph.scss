@@ -4,15 +4,11 @@
 .graphDiv{
   font-family: $body-font;
   font-size: $font-size-11;
-  width:100;
-  height: 100;
   display: block;
   margin-bottom: 15px;
   float: none;
   display: inline-block;
   @include breakpoint(xs){
-    width: 40%;
-    height: 300px;
     display: inline-block;
     float: right;
   }
@@ -22,11 +18,7 @@
   margin-top: 50px;
   float:left;
   display: inline-block;
-  width: auto;
-  height: auto;
   @include breakpoint(xs){
-    width: 200%;
-    height: 200%;
     padding-top: 30px;
     margin: auto;
     margin-bottom: 30px;
