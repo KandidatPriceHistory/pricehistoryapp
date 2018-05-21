@@ -7,7 +7,8 @@ export function fetchPriceHistory(prodId, retId) {
       .then((response) => {
         const findPriceHistory = []
         response.data.forEach(function(el) {
-          if(el.productid === prodId && el.retailerid === retId){
+          var productIdConnected = '1-'.concat(el.productid)
+          if(productIdConnected === prodId && el.retailerid === retId){
             findPriceHistory.push(el);
           }
         })
