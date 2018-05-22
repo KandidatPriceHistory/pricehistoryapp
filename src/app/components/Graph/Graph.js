@@ -27,6 +27,7 @@ import { connect } from "react-redux";
 function sortDates(graphData) {
   const arrayOfDates = []
   const graphDataSorted = []
+  let lastDate = ""
   graphData.map( el => {
     const eachDate = el.updatedAt.slice(0,10).split('-').join('');
     arrayOfDates.push(eachDate)
@@ -37,9 +38,10 @@ function sortDates(graphData) {
   sortedArray.forEach(sortedDate => {
     graphData.forEach(data => {
       const date = data.updatedAt.slice(0,10).split('-').join('');
-      if (sortedDate === date) {
-        var obj = { "price": data.price, "date":date }
+      if (sortedDate === date && sortedDate != lastDate) {
+        const obj = { "price": data.price, "date":date }
         graphDataSorted.push(obj)
+        lastDate = sortedDate;
       }
     })
   })

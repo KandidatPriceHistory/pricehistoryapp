@@ -13,8 +13,9 @@ import Factbox from "./Factbox/Factbox";
 class productPriceHistory extends Component {
 
   componentWillMount() {
-    var currentProductId = window.location.pathname.slice(21,30);
-    var currentRetailerId = window.location.pathname.slice(31);
+    const currentProductId = window.location.pathname.slice(21,30);
+    const currentRetailerId = window.location.pathname.slice(31);
+    console.log('retailerid:',currentRetailerId,'prodid:',currentProductId);
     this.props.dispatch(fetchProduct(currentProductId));
     this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
   }
@@ -25,7 +26,7 @@ class productPriceHistory extends Component {
             <Header />
             <ProductInfoBox product={this.props.product}/>
             <Graph graph={this.props.priceHistoryItem}/>
-            <Factbox />
+            <Factbox priceInfo = {this.props.priceHistoryItem}/>
             <Footer />
        </div>
        )
@@ -39,6 +40,7 @@ class productPriceHistory extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('states:',state.priceHistoryFetched,state.productFetched);
   return {
     product: state.product,
     productFetched: state.productFetched,
