@@ -16,7 +16,7 @@ class productPriceHistory extends Component {
     var currentProductId = window.location.pathname.slice(21,30);
     var currentRetailerId = window.location.pathname.slice(31);
     this.props.dispatch(fetchProduct(currentProductId));
-    //this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
+    this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
   }
   render() {
     if (this.props.productFetched && this.props.priceHistoryFetched){
@@ -24,7 +24,7 @@ class productPriceHistory extends Component {
        <div>
             <Header />
             <ProductInfoBox product={this.props.product}/>
-            //<Graph graph={this.props.priceHistoryItem}/>
+            <Graph graph={this.props.priceHistoryItem}/>
             <Factbox />
             <Footer />
        </div>
