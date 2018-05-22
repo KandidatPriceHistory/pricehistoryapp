@@ -26,7 +26,7 @@ import { connect } from "react-redux";
 
 function sortDates(graphData) {
   const arrayOfDates = []
-  const graphDataSorted= []
+  const graphDataSorted = []
   graphData.map( el => {
     const eachDate = el.updatedAt.slice(0,10).split('-').join('');
     arrayOfDates.push(eachDate)
