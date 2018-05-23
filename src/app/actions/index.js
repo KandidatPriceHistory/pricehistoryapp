@@ -4,7 +4,7 @@ export function fetchPriceHistory(prodId, retId) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRICE_HISTORY_START"})
     const prodIdSliced = prodId.slice(2)
-    axios.get(`http://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retId}?per_page=100000`)
+    axios.get(`https://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retId}?per_page=100000`)
       .then((response) => {
         console.log('response:', response.data);
         dispatch({
