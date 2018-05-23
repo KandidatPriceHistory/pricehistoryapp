@@ -6,7 +6,6 @@ export function fetchPriceHistory(prodId, retId) {
     const prodIdSliced = prodId.slice(2)
     axios.get(`https://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retId}?per_page=100000`)
       .then((response) => {
-        console.log('response:', response.data);
         dispatch({
           type: "RECIEVE_PRICE_HISTORY",
           payload: response.data
