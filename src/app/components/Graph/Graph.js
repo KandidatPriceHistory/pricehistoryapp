@@ -11,7 +11,7 @@ import { connect } from "react-redux";
       return (
         <div className = "graphDiv">
 
-            <ResponsiveContainer width="80%" height={200}>
+            <ResponsiveContainer width='100%' height={200}>
               <LineChart className = "theGraph" data={graphData}>
                 <Line type="monotone" dataKey="price" stroke="#207A88" />
                 <CartesianGrid stroke ="#ccc" strokeDasharray="5 5" />

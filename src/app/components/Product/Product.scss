@@ -6,7 +6,7 @@
    position: relative;
    display: inline-block;
    margin-bottom: 15px;
-   @include breakpoint(xs){
+   @include breakpoint(sm){
      height: 280px;
      width: 60%;
 
@@ -19,7 +19,7 @@
   display: inline-block;
   font-family: $body-font;
   position: absolute;
-  @include breakpoint(xs){
+  @include breakpoint(sm){
     padding-top: 20px;
     margin-top: 15px;
   }
@@ -40,6 +40,9 @@
      font-family: $body-font;
      padding-top: 10px;
      margin-left: 140px;
+     @include breakpoint(sm){
+        margin-left: 193px;
+     };
      @include breakpoint(xs){
         margin-left: 190px;
      };
