@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from "./Graph.scss";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer  } from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend   } from 'recharts';
 import { connect } from "react-redux";
 
 
@@ -11,7 +11,7 @@ import { connect } from "react-redux";
       return (
         <div className = "graphDiv">
 
-            <ResponsiveContainer width='80%' height='100%'>
+            <ResponsiveContainer width="80%" height={200}>
               <LineChart className = "theGraph" data={graphData}>
                 <Line type="monotone" dataKey="price" stroke="#207A88" />
                 <CartesianGrid stroke ="#ccc" strokeDasharray="5 5" />
