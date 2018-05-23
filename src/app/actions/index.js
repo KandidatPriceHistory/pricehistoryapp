@@ -25,6 +25,7 @@ export function fetchRetailers(productId) {
     dispatch({type: "FETCH_RETAILERS_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/retailers")
       .then((response) => {
+        console.log('prodid:',productId);
         const findRetailers = []
         response.data.map(retailer => {
           retailer.retailersProducts.map(el => {
@@ -68,15 +69,15 @@ export function fetchProducts() {
 export function fetchProduct(id) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
-    axios.get("https://pricehistorybackend.herokuapp.com/products")
+    axios.get(`https://pricehistorybackend.herokuapp.com/products/${id}`)
 
       .then((response) => {
-        const findProduct = response.data.find(function(el) {
+        /*const findProduct = response.data.find(function(el) {
           return el.id === id
-        })
+        })*/
         dispatch({
           type: "RECIEVE_PRODUCT",
-          payload: findProduct
+          payload: response.data
         })
       })
 
