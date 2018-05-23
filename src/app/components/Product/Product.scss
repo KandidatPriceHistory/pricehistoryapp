@@ -40,6 +40,7 @@
      font-family: $body-font;
      padding-top: 10px;
      margin-left: 140px;
+      line-height: 1.1;
      @include breakpoint(sm){
         margin-left: 193px;
      };
