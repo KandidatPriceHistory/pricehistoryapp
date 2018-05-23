@@ -7,7 +7,7 @@ export default class productList extends React.Component {
     return (
       <div className = "listProducts" >
         { this.props.products.map(el => (
-          <ProductItem product={el}/>
+          <ProductItem product={el} key={el.id}/>
         ))}
       </div>
     )

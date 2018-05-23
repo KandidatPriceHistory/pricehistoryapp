@@ -66,7 +66,7 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           fetching: false,
           productFetched: true,
-          product: action.payload,
+          product: action.payload
         }
         break;
       }
@@ -82,7 +82,7 @@ const rootReducer = (state = initialState, action) => {
       case "FETCH_PRICE_HISTORY_START": {
         return {
           ...state,
-          fetching: true
+          priceHistoryFetched: false
         }
         break;
       }
@@ -91,7 +91,7 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           fetching: false,
           priceHistoryFetched: true,
-          priceHistoryItem: action.payload,
+          priceHistoryItem: action.payload
         }
         break;
       }
@@ -99,7 +99,8 @@ const rootReducer = (state = initialState, action) => {
         return {
           ...state,
           fetching: false,
-          error: action.payload}
+          error: action.payload
+        }
         break;
       }
     default:

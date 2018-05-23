@@ -7,7 +7,7 @@ export default class RetailerList extends React.Component {
     return (
       <div className = "retailerList" >
         { this.props.retailers.map(el => (
-          <RetailerItem retailer={el} product={this.props.product}/>
+          <RetailerItem retailer={el} product={this.props.product} key={el.retailerid}/>
         ))}
       </div>
     )
