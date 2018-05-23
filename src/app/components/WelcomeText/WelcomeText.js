@@ -5,7 +5,7 @@ export default class WelcomeText extends React.Component {
   render() {
     return (
       <div className ="img">
-      <img class = "welcometext"/>
+      <img className = "welcometext"/>
       </div>
 
     );
