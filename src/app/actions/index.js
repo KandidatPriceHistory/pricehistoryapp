@@ -3,18 +3,13 @@ import axios from 'axios';
 export function fetchPriceHistory(prodId, retId) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRICE_HISTORY_START"})
-    axios.get("https://pricehistorybackend.herokuapp.com/pricehistoryitem")
+    const prodIdSliced = prodId.slice(2)
+    axios.get(`http://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retId}?per_page=100000`)
       .then((response) => {
-        const findPriceHistory = []
-        response.data.forEach(function(el) {
-          var productIdConnected = '1-'.concat(el.productid)
-          if(productIdConnected === prodId && el.retailerid === retId){
-            findPriceHistory.push(el);
-          }
-        })
+        console.log('response:', response.data);
         dispatch({
           type: "RECIEVE_PRICE_HISTORY",
-          payload: findPriceHistory
+          payload: response.data
         })
       })
       .catch((err) => {
