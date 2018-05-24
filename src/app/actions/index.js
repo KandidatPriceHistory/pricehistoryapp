@@ -23,7 +23,7 @@ export function fetchPriceHistory(prodId, retId) {
 export function fetchRetailers(productId) {
   return function(dispatch) {
     dispatch({type: "FETCH_RETAILERS_START"})
-    axios.get("https://pricehistorybackend.herokuapp.com/retailers")
+    axios.get(`https://pricehistorybackend.herokuapp.com/retailers/${productId}`)
       .then((response) => {
         dispatch({
           type: "RECIEVE_RETAILERS",
