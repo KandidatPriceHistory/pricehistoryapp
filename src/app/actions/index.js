@@ -25,17 +25,9 @@ export function fetchRetailers(productId) {
     dispatch({type: "FETCH_RETAILERS_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/retailers")
       .then((response) => {
-        const findRetailers = []
-        response.data.map(retailer => {
-          retailer.retailersProducts.map(el => {
-              if (el.productid === productId){
-                findRetailers.push(retailer)
-              }
-          })
-        })
         dispatch({
           type: "RECIEVE_RETAILERS",
-          payload: findRetailers
+          payload: response.data
         })
       })
       .catch((err) => {
