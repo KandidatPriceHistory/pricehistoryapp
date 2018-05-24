@@ -8,9 +8,10 @@
   margin-bottom: 15px;
   float: none;
   display: inline-block;
-  @include breakpoint(xs){
-    display: inline-block;
+  width: 100%;
+  @include breakpoint(sm){
     float: right;
+    width: 40%;
   }
 }
 

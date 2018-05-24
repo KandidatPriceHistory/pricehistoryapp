@@ -4,9 +4,8 @@ export function fetchPriceHistory(prodId, retId) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRICE_HISTORY_START"})
     const prodIdSliced = prodId.slice(2)
-    axios.get(`http://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retId}?per_page=100000`)
+    axios.get(`https://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retId}?per_page=100000`)
       .then((response) => {
-        console.log('response:', response.data);
         dispatch({
           type: "RECIEVE_PRICE_HISTORY",
           payload: response.data
@@ -24,19 +23,11 @@ export function fetchPriceHistory(prodId, retId) {
 export function fetchRetailers(productId) {
   return function(dispatch) {
     dispatch({type: "FETCH_RETAILERS_START"})
-    axios.get("https://pricehistorybackend.herokuapp.com/retailers")
+    axios.get(`https://pricehistorybackend.herokuapp.com/retailers/${productId}`)
       .then((response) => {
-        const findRetailers = []
-        response.data.map(retailer => {
-          retailer.retailersProducts.map(el => {
-              if (el.productid === productId){
-                findRetailers.push(retailer)
-              }
-          })
-        })
         dispatch({
           type: "RECIEVE_RETAILERS",
-          payload: findRetailers
+          payload: response.data
         })
       })
       .catch((err) => {
@@ -69,18 +60,13 @@ export function fetchProducts() {
 export function fetchProduct(id) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
-    axios.get("https://pricehistorybackend.herokuapp.com/products")
-
+    axios.get(`https://pricehistorybackend.herokuapp.com/products/${id}`)
       .then((response) => {
-        const findProduct = response.data.find(function(el) {
-          return el.id === id
-        })
         dispatch({
           type: "RECIEVE_PRODUCT",
-          payload: findProduct
+          payload: response.data
         })
       })
-
       .catch((err) => {
         dispatch({
           type: "FETCH_PRODUCT_ERROR",
