@@ -28,8 +28,10 @@
   background-size: 400px;
   background-image: url("https://images.pricerunner.com/images/site-gui/startsida/bg-start.png");
   margin-bottom: 15px;
+  text-decoration: none;
   @include breakpoint(xs){
     height: 150px;
+    text-decoration: none;
   }
 
 }
@@ -42,14 +44,15 @@
   @include breakpoint(xs){
     font-size: 25px;
     text-align: left;
-    text-decoration: none;
   }
 }
 
 .history{
   font-size: 15px;
   color: $pr-white;
+  text-decoration: none;
   @include breakpoint(xs){
     font-size: 22px;
+    text-decoration: none;
   };
 }

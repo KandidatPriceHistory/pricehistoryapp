@@ -33,7 +33,7 @@ export default class Retailer extends React.Component {
         </div>
         <Link to ={`/productpricehistory/${this.props.product.id}/${this.props.retailer.retailerid}`} className="linkTo">
           <button type="button" className="graphButton"> Go to graph </button>
-           <i class="mobilebutton"></i>
+           <i className="mobilebutton"></i>
         </Link>
       </div>
       )
