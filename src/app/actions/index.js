@@ -25,7 +25,6 @@ export function fetchRetailers(productId) {
     dispatch({type: "FETCH_RETAILERS_START"})
     axios.get("https://pricehistorybackend.herokuapp.com/retailers")
       .then((response) => {
-        console.log('prodid:',productId);
         const findRetailers = []
         response.data.map(retailer => {
           retailer.retailersProducts.map(el => {
