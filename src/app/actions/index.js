@@ -70,17 +70,12 @@ export function fetchProduct(id) {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCT_START"})
     axios.get(`https://pricehistorybackend.herokuapp.com/products/${id}`)
-
       .then((response) => {
-        /*const findProduct = response.data.find(function(el) {
-          return el.id === id
-        })*/
         dispatch({
           type: "RECIEVE_PRODUCT",
           payload: response.data
         })
       })
-
       .catch((err) => {
         dispatch({
           type: "FETCH_PRODUCT_ERROR",
