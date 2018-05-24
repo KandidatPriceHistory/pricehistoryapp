@@ -4,73 +4,64 @@ import styles from "./Factbox.scss";
 export default class Factbox extends React.Component {
    render() {
      const currentProduct = this.props.product;
-     const currentRetailer = this.props.retailers;
-     console.log("RETAILERS IN FACTBOX",currentRetailer);
-     //const minMaxPrice = getMinMax(this.props.pricehistory);
-     //const minPrice = getMin(this.props.pricehistory);
-     //const maxPrice = getMax(this.props.pricehistory);
-     console.log("RETAILER:", currentRetailer.retailerName );
-     console.log("PRODUCT:", currentProduct.name);
+     const minPriceDate = getMin(this.props.pricehistory); //get min price for current product
+     const maxPriceDate = getMax(this.props.pricehistory); //-"- max -"-
+     const currentRetailer = checkRetailer(this.props.retailers); //get what retailer user clicked on
+
 
       return (
         <div className = "factboxDiv">
         <h2 className= "factsHeadline"> Facts about {currentProduct.name} </h2>
-
-
+        <h3 className = "facts"> Retailer: {currentRetailer} </h3>
+        <h3 className = "facts"> Billigast pris: {minPriceDate.minPrice} tillgängligt: {minPriceDate.minDate} </h3>
+        <h3 className = "facts"> Dyrast pris: {maxPriceDate.maxPrice} tillgängligt: {maxPriceDate.maxDate} </h3>
         </div>
       );
    }
 }
-
-// Kanske såhär är snyggare
-function getMinMax(pricehistoryObj){
-  const arrayMinMax = []
-  const arrayPrices  =[]
-  pricehistoryObj.map(el=> {
-    const eachPrice = el.price;
-    arrayPrices.push(eachPrice);
-    //ta bort ----
-    const test = 29000;
-    arrayPrices.push(test);
-    //--------------
-  });
-
-  var maxPrice = Math.max.apply(Math, arrayPrices);
-  arrayMinMax.push(maxPrice);
-  var minPrice = Math.min.apply(Math, arrayPrices);
-  arrayMinMax.push(minPrice);
-  return arrayMinMax;
-};
-
-//-----------------------------------------------------
-
+// get MIN PRICE and WHICH DATE IS MIN PRICE
 function getMin(pricehistoryObj){
-  const arrayPrices  =[]
-  pricehistoryObj.map(el=> {
-    const eachPrice = el.price;
-    arrayPrices.push(eachPrice);
-    //ta bort ----
-    const test = 29000;
-    arrayPrices.push(test);
-    //--------------
-    console.log("ALLA PRISER I EN LISTA:", arrayPrices);
+  var minDate = "";
+  var minPrice = 0;
+  const priceArray = [];
+  pricehistoryObj.map(pricehistory => { //loopar över alla pricehistory objekt
+    priceArray.push(pricehistory.price); //lägger in alla priser för produkt i priceArray
   });
-  var minPrice = Math.min.apply(Math, arrayPrices);
-  return minPrice;
+  minPrice = Math.min.apply(Math, priceArray);//beräknar minsta priset i pricearray
+  pricehistoryObj.forEach(obj => {
+    if (obj.price === minPrice){
+      minDate = obj.updatedAt
+    };
+    return {"minPrice": minPrice, "minDate": minDate}
+  });
+  return {"minPrice": minPrice, "minDate": minDate}
 };
-// Samma funktion som för min pris -- kan man ha bara en funktion??? LÖS
 
+//________________________________________________________________________
+// get MAX PRICE and WHICH DATE IS MAX
 function getMax(pricehistoryObj){
-  const arrayPrices  =[]
-  pricehistoryObj.map(el=> {
-    const eachPrice = el.price;
-    arrayPrices.push(eachPrice);
-    //ta bort ----
-    const test = 29000;
-    arrayPrices.push(test);
-    //--------------
+  var maxDate = "";
+  var maxPrice = 0;
+  const priceArray = [];
+  pricehistoryObj.map(pricehistory => { //loopar över alla pricehistory objekt
+    priceArray.push(pricehistory.price); //lägger in alla priser för produkt i priceArray
   });
+  maxPrice = Math.max.apply(Math, priceArray);//beräknar minsta priset i pricearray
+  pricehistoryObj.forEach(obj => {
+    if (obj.price === maxPrice){
+      maxDate = obj.updatedAt
+    };
+    return {"maxPrice": maxPrice, "maxDate": maxDate}
+  });
+  return {"maxPrice": maxPrice, "maxDate": maxDate}
+};
 
-  var maxPrice = Math.max.apply(Math, arrayPrices);
-  return maxPrice;
+
+//check which retailer user is on in order to get the name for factbox.
+function checkRetailer(retailersObj){
+  const currentRetailerId = window.location.pathname.slice(31);//the retailer id.
+  const retailer = retailersObj.find(function(obj){//find which id user is on.
+    return obj.retailerid === currentRetailerId; //return the object user is on.
+  });
+  return retailer.retailerName; //return name for the retailer user is on.
 };

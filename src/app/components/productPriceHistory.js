@@ -14,15 +14,12 @@ class productPriceHistory extends Component {
   componentWillMount() {
     const currentProductId = window.location.pathname.slice(21,30);
     const currentRetailerId = window.location.pathname.slice(31);
-    console.log('retailerid:',currentRetailerId,'prodid:',currentProductId);
     this.props.dispatch(fetchProduct(currentProductId));
     this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
     this.props.dispatch(fetchRetailers(currentProductId));
-    console.log("HAR FETCHAT RETAILERS");
   }
   render() {
     if (this.props.productFetched && this.props.priceHistoryFetched){
-      console.log("I IF");
       return (
        <div>
             <Header />
@@ -42,11 +39,7 @@ class productPriceHistory extends Component {
 }
 
 const mapStateToProps = state => {
-<<<<<<< HEAD
-  console.log("REtailers:", state.retailers);
-=======
-  console.log('states:',state.priceHistoryFetched,state.productFetched);
->>>>>>> master
+
   return {
     product: state.product,
     productFetched: state.productFetched,
