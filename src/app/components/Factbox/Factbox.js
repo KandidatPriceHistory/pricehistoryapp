@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from "./Factbox.scss";
 
-export default class Factbox extends React.Component {
+export default class Factbox extends Component {
    render() {
      const currentProduct = this.props.product;
      const minPriceDate = getMin(this.props.pricehistory); //get min price for current product
