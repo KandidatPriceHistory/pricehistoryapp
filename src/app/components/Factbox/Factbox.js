@@ -6,8 +6,6 @@ export default class Factbox extends Component {
      const currentProduct = this.props.product;
      const minPriceDate = getMin(this.props.pricehistory); //get min price for current product
      const maxPriceDate = getMax(this.props.pricehistory); //-"- max -"-
-     // const currentRetailer = checkRetailer(this.props.retailers); //get what retailer user clicked on
-
       return (
         <div className = "factboxDiv">
           <h2 className= "factsHeadline"> Facts about {this.props.product.name} </h2>
@@ -54,14 +52,3 @@ function getMax(pricehistoryObj){
   });
   return {"maxPrice": maxPrice, "maxDate": maxDate}
 };
-
-
-//check which retailer user is on in order to get the name for factbox.
-/*
-function checkRetailer(retailersObj){
-  const currentRetailerId = window.location.pathname.slice(31);//the retailer id.
-  const retailer = retailersObj.find(function(obj){//find which id user is on.
-    return obj.retailerid === currentRetailerId; //return the object user is on.
-  });
-  return retailer.retailerName; //return name for the retailer user is on.
-};*/
