@@ -39,6 +39,25 @@ export function fetchRetailers(productId) {
   }
 }
 
+export function fetchRetailer(productId,retailerId) {
+  return function(dispatch) {
+    dispatch({type: "FETCH_RETAILER_START"})
+    axios.get(`https://pricehistorybackend.herokuapp.com/retailers/${productId}/${retailerId}`)
+      .then((response) => {
+        dispatch({
+          type: "RECIEVE_RETAILER",
+          payload: response.data
+        })
+      })
+      .catch((err) => {
+        dispatch({
+          type: "FETCH_RETAILER_ERROR",
+          payload: err
+        })
+      })
+  }
+}
+
 export function fetchProducts() {
   return function(dispatch) {
     dispatch({type: "FETCH_PRODUCTS_START"})
