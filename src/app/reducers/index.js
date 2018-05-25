@@ -4,9 +4,11 @@ const initialState = {
   productsFetched: false,
   productFetched: false,
   retailersFetched: false,
+  retailerFetched: false,
   priceHistoryFetched: false,
   products: [],
   retailers: [],
+  retailer: [],
   error: null,
   priceHistoryItem: [],
 };
@@ -27,6 +29,28 @@ const rootReducer = (state = initialState, action) => {
         break;
       }
       case "FETCH_RETAILERS_ERROR": {
+        return {
+          ...state,
+          fetching: false,
+          error: action.payload
+        }
+        break;
+      }
+      case "FETCH_RETAILER_START": {
+        return {...state,
+          fetching: true}
+        break;
+      }
+      case "RECIEVE_RETAILER": {
+        return {
+        ...state,
+          fetching: false,
+          retailerFetched: true,
+          retailer: action.payload,
+        }
+        break;
+      }
+      case "FETCH_RETAILER_ERROR": {
         return {
           ...state,
           fetching: false,

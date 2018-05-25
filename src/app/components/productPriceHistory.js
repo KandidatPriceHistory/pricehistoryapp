@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Header from './Header/Header.js';
 import Graph from './Graph/Graph.js';
 import Footer from './Footer/Footer';
-import { connect } from 'react-redux';
-import reducers from "../reducers/index.js"
 import ProductInfoBox from './Product/ProductInfoBox';
-import { fetchPriceHistory, fetchProduct, fetchRetailers } from '../actions/index';
-
 import Factbox from "./Factbox/Factbox";
+
+import { fetchPriceHistory, fetchProduct, fetchRetailer } from '../actions/index';
+import reducers from "../reducers/index.js"
 
 class productPriceHistory extends Component {
 
@@ -16,16 +17,16 @@ class productPriceHistory extends Component {
     const currentRetailerId = window.location.pathname.slice(31);
     this.props.dispatch(fetchProduct(currentProductId));
     this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
-    this.props.dispatch(fetchRetailers(currentProductId));
+    this.props.dispatch(fetchRetailer(currentProductId,currentRetailerId));
   }
   render() {
-    if (this.props.productFetched && this.props.priceHistoryFetched){
+    if (this.props.productFetched && this.props.priceHistoryFetched && this.props.retailerFetched){
       return (
        <div>
             <Header />
             <ProductInfoBox product={this.props.product}/>
             <Graph graph={this.props.priceHistoryItem}/>
-            <Factbox pricehistory={this.props.priceHistoryItem} product = {this.props.product} retailers={this.props.retailers}/>
+            <Factbox pricehistory={this.props.priceHistoryItem} product = {this.props.product} retailer={this.props.retailer}/>
             <Footer />
        </div>
        )
@@ -39,13 +40,13 @@ class productPriceHistory extends Component {
 }
 
 const mapStateToProps = state => {
-
   return {
     product: state.product,
     productFetched: state.productFetched,
-    priceHistoryFetched: state.priceHistoryFetched,
     priceHistoryItem: state.priceHistoryItem,
-    retailers: state.retailers,
+    priceHistoryFetched: state.priceHistoryFetched,
+    retailer: state.retailer,
+    retailerFetched: state.retailerFetched,
    }
 }
 
