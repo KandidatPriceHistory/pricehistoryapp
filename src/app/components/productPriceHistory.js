@@ -7,7 +7,7 @@ import Footer from './Footer/Footer';
 import ProductInfoBox from './Product/ProductInfoBox';
 import Factbox from "./Factbox/Factbox";
 
-import { fetchPriceHistory, fetchProduct, fetchRetailer } from '../actions/index';
+import { fetchPriceHistory, fetchProduct, fetchRetailer, fetchMaxPrice, fetchMinPrice } from '../actions/index';
 import reducers from "../reducers/index.js"
 
 class productPriceHistory extends Component {
@@ -18,15 +18,30 @@ class productPriceHistory extends Component {
     this.props.dispatch(fetchProduct(currentProductId));
     this.props.dispatch(fetchPriceHistory(currentProductId, currentRetailerId));
     this.props.dispatch(fetchRetailer(currentProductId,currentRetailerId));
+    this.props.dispatch(fetchMaxPrice(currentProductId,currentRetailerId));
+    this.props.dispatch(fetchMinPrice(currentProductId,currentRetailerId));
   }
   render() {
-    if (this.props.productFetched && this.props.priceHistoryFetched && this.props.retailerFetched){
+    if (
+      this.props.productFetched &&
+      this.props.priceHistoryFetched &&
+      this.props.retailerFetched &&
+      this.props.maxPriceFetched &&
+      this.props.minPriceFetched
+    ){
+      console.log('in the if-statement');
       return (
        <div>
             <Header />
-            <ProductInfoBox product={this.props.product}/>
-            <Graph graph={this.props.priceHistoryItem}/>
-            <Factbox pricehistory={this.props.priceHistoryItem} product = {this.props.product} retailer={this.props.retailer}/>
+            <ProductInfoBox product = {this.props.product}/>
+            <Graph graph = {this.props.priceHistoryItem}/>
+            <Factbox
+              pricehistory = {this.props.priceHistoryItem}
+              product = {this.props.product}
+              retailer = {this.props.retailer}
+              maxPrice = {this.props.maxPrice}
+              minPrice = {this.props.minPrice}
+            />
             <Footer />
        </div>
        )
@@ -40,6 +55,12 @@ class productPriceHistory extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('product:',state.productFetched,
+  'pricehistory:',state.priceHistoryFetched,
+  'retailer:',state.retailerFetched,
+  'max:',state.maxPriceFetched,
+  'min:',state.minPriceFetched
+);
   return {
     product: state.product,
     productFetched: state.productFetched,
@@ -47,6 +68,10 @@ const mapStateToProps = state => {
     priceHistoryFetched: state.priceHistoryFetched,
     retailer: state.retailer,
     retailerFetched: state.retailerFetched,
+    maxPrice: state.maxPrice,
+    minPrice: state.minPrice,
+    maxPriceFetched: state.maxPriceFetched,
+    minPriceFetched: state.minPriceFetched,
    }
 }
 

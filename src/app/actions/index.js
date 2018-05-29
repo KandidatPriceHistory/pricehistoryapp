@@ -89,7 +89,48 @@ export function fetchProduct(id) {
       .catch((err) => {
         dispatch({
           type: "FETCH_PRODUCT_ERROR",
-          payload: err})
+          payload: err
+        })
       })
+  }
+}
+
+export function fetchMaxPrice(productId,retailerId) {
+  return function (dispatch) {
+    dispatch({type: "FETCH_MAXPRICE_START"})
+    const prodIdSliced = productId.slice(2)
+    axios.get(`https://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retailerId}/max`)
+    .then((response) => {
+      dispatch({
+        type: "RECIEVE_MAXPRICE",
+        payload: response.data
+      })
+    })
+    .catch((err) => {
+      dispatch({
+        type: "FETCH_MAXPRICE_ERROR",
+        payload: err
+      })
+    })
+  }
+}
+
+export function fetchMinPrice(productId,retailerId) {
+  return function (dispatch) {
+    dispatch({type: "FETCH_MINPRICE_START"})
+    const prodIdSliced = productId.slice(2)
+    axios.get(`https://pricehistorybackend.herokuapp.com/pricehistories/${prodIdSliced}/${retailerId}/min`)
+    .then((response) => {
+      dispatch({
+        type: "RECIEVE_MINPRICE",
+        payload: response.data
+      })
+    })
+    .catch((err) => {
+      dispatch({
+        type: "FETCH_MINPRICE_ERROR",
+        payload: err
+      })
+    })
   }
 }

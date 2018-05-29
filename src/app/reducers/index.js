@@ -6,11 +6,15 @@ const initialState = {
   retailersFetched: false,
   retailerFetched: false,
   priceHistoryFetched: false,
+  maxPriceFetched: false,
+  minPriceFetched: false,
   products: [],
   retailers: [],
   retailer: [],
   error: null,
   priceHistoryItem: [],
+  minPrice: {},
+  maxPrice: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -123,6 +127,51 @@ const rootReducer = (state = initialState, action) => {
         return {
           ...state,
           fetching: false,
+          error: action.payload
+        }
+        break;
+      }
+
+      case "FETCH_MAXPRICE_START": {
+        return {
+          ...state,
+          maxPriceFetched: false
+        }
+        break;
+      }
+      case "RECIEVE_MAXPRICE": {
+        return {
+          ...state,
+          maxPriceFetched: true,
+          maxPrice: action.payload
+        }
+        break;
+      }
+      case "FETCH_MAXPRICE_ERROR": {
+        return {
+          ...state,
+          error: action.payload
+        }
+        break;
+      }
+      case "FETCH_MINPRICE_START": {
+        return {
+          ...state,
+          minPriceFetched: false
+        }
+        break;
+      }
+      case "RECIEVE_MINPRICE": {
+        return {
+          ...state,
+          minPriceFetched: true,
+          minPrice: action.payload
+        }
+        break;
+      }
+      case "FETCH_MINPRICE_ERROR": {
+        return {
+          ...state,
           error: action.payload
         }
         break;
