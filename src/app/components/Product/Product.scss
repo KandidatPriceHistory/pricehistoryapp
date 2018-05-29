@@ -1,13 +1,13 @@
 @import "../../style/pr-foundation";
 //Product scss
 .productInfoBox{
-   height: 260px;
+   height: 200px;
    width: 100%;
    position: relative;
    display: inline-block;
    margin-bottom: 15px;
    @include breakpoint(sm){
-     height: 280px;
+     height: 250px;
      width: 60%;
 
    };
