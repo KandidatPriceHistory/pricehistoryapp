@@ -29,7 +29,6 @@ class productPriceHistory extends Component {
       this.props.maxPriceFetched &&
       this.props.minPriceFetched
     ){
-      console.log('in the if-statement');
       return (
        <div>
             <Header />
@@ -55,12 +54,6 @@ class productPriceHistory extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('product:',state.productFetched,
-  'pricehistory:',state.priceHistoryFetched,
-  'retailer:',state.retailerFetched,
-  'max:',state.maxPriceFetched,
-  'min:',state.minPriceFetched
-);
   return {
     product: state.product,
     productFetched: state.productFetched,

@@ -16,7 +16,8 @@ export default class Factbox extends Component {
       return (
         <div className = "factboxDiv">
           <img
-            src={this.getLogo()} id="retailerImg"
+            src={this.getLogo()}
+            id="retailerImg"
           />
           <h2 className= "factsHeadline"> Facts about {this.props.product.name} </h2>
           <h3 className = "facts"> Produkten var billigast den <b>{this.props.maxPrice.updatedAt}</b> och kostade då <b>{this.props.minPrice.price} SEK</b></h3>

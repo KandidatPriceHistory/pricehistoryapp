@@ -12,7 +12,7 @@ import { connect } from "react-redux";
               <LineChart className = "theGraph" data={this.props.graph}>
                 <Line type="monotone" dataKey="price" stroke="#207A88"/>
                 <CartesianGrid stroke ="#ccc" strokeDasharray="5 5" />
-                <XAxis dataKey="date" />
+                <XAxis dataKey="updatedAt" />
                 <YAxis />
                 <Tooltip />
               </LineChart>
