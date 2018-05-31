@@ -1,4 +1,5 @@
 @import "../../style/pr-foundation";
+
 //Product scss
 .productInfoBox{
    height: 200px;
@@ -85,7 +86,6 @@
 
 #descriptionHome{
   font-family: $body-font;
-  // font-size: 8px;
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -93,7 +93,6 @@
   height: 50px;
   position: absolute;
   margin-left: 90px;
-  //margin-top: 35px;
   display: inline-block;
   @include breakpoint(xs){
     margin-left: 120px;

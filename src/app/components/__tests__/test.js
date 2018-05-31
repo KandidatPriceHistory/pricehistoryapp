@@ -1,6 +1,5 @@
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-//import AppComponent from '../AppComponent';
 
 describe('Addition', () => {
   it('knows that 2 and 2 make 4', () => {
